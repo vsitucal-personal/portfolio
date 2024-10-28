@@ -3,24 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/data/types.dart';
 
 const data = <dynamic, dynamic>{
-  "AppTitle": "Tushar Gautam",
+  "AppTitle": "Vincent Itucal",
 };
-
-// const homeData = const <dynamic, dynamic>{
-//   "greeting": "Hello",
-//   "name": "I'm Tushar Gautam",
-//   "title": "Full Stack Developer",
-//   "bg-image": "assets/images/1home.webp",
-//   "user-image": "images/man.png"
-// };
 
 class HomeData {
   static const greeting = "Hello!";
   static const intro = "I am Vincent Itucal";
-  static const profile = "Software Engineer";
+  static const profile = "Software Engineer | Data Scientist";
   static const bg_image = "assets/images/work_banner.png";
   // static const user_image = "assets/images/man.png";
-  static const user_image = "https://avatars.githubusercontent.com/u/21080598?v=4";
+  static const user_image = "https://avatars.githubusercontent.com/u/99640086";
 }
 
 class AboutData {
