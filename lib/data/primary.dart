@@ -97,7 +97,8 @@ Professionally I have used python for automating tasks of operations teams at Te
 }
 
 class ContactData {
-  static const bg_image = "assets/images/6contact.webp";
+  static const bg_image = "assets/images/seadragon.jfif";
+  static const gcash = "assets/images/gcash.png";
   static const List<ContactClass> contacts = [
     const ContactClass(
       contactName: "Gmail",

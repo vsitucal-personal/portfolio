@@ -17,7 +17,14 @@ class ContactScreen extends StatelessWidget {
       //height: size.height,
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: NetworkImage(ContactData.bg_image), fit: BoxFit.cover),
+            image: NetworkImage(
+              ContactData.bg_image), fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.2), 
+              BlendMode.dstATop,             
+            ),
+            ),
+            
       ),
       child: Container(
         //alignment: Alignment.sta,
@@ -36,7 +43,7 @@ class ContactScreen extends StatelessWidget {
                 margin: EdgeInsets.all(20),
                 child: Text(
                   "Contact ",
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
                 ),
               ),
             ),
@@ -97,17 +104,21 @@ class ContactScreen extends StatelessWidget {
                     )),
               ],
             ),
-                Align(
+            Align(
               alignment: Alignment.topLeft,
-              child: Container(
-                //color: Colors.green,
-                margin: EdgeInsets.all(20),
-                child: Text(
-                  "??????????????",
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              child: Text(
+                "Support Me:",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black
                 ),
               ),
             ),
+            Container(
+              width: 450, // Set the width of the container
+              height: 700,
+              child: Image.network(ContactData.gcash, fit: BoxFit.fitHeight),
+            )
           ],
         ),
       ),
