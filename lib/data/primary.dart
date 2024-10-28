@@ -111,28 +111,91 @@ class SkillsData {
   static const buttonFontColor = Colors.white;
   static const List<SkillsFormat> skills = [
     const SkillsFormat(
-        skillName: "Python",
-        experienceTimeWithSkill: "4+ years",
+        skillName: "Portfolio",
+        experienceTimeWithSkill: "",
         details:
-            """"Python is one of my favourite languages. It is my go to language to solve any problem with scriptable solution. Apart form using it to script almost every small problem, I have worked on few of my personal python projects that are a bit larger in scale,
-Professionally I have used python for automating tasks of operations teams at Tech Mahindra.""",
+            """x""",
         certifications: [],
         projects: [
           const ProjectsData(
-            project: "Python On Pails",
-            duration: "2018 - Current",
+            project: "Which mainstream cryptocurrency is best for your needs?",
+            duration: "(AIM-MSDS) Big Data And Cloud Computing - Laboratory Report",
             aboutProject:
-                """Python On Pails is an OpenSource lightweight web development framework that is designed to speed up development process.""",
-            image: "assets/images/others/pyop.webp",
-            sourceUrl: "https://github.com/tg21/python-on-pails",
+                """Leveraged big data technologies to analyze Bitcoin and Ethereum use cases and performance metrics, optimizing cryptocurrency decision-making based on transaction efficiency, costs, and utility""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/bdcc_lab",
           ),
           const ProjectsData(
-            project: "WiBuster",
-            duration: "2018 - Current",
+            project: "Smart Pricing: Machine Learning and SHAP for Option Valuation",
+            duration: "(AIM-MSDS) Machine Learning 2 - Final Project",
             aboutProject:
-                "WiBuster is an opesource website enumerator made with python3. It can enumerate even those websites that respond with code 200 even when resource is not present",
-            image: "assets/images/others/wibuster.webp",
-            sourceUrl: "https://github.com/tg21/wibuster",
+                """Used popular Machine Learning models to predict last traded prices of US options and used Black-Scholes-Merton traditional pricing model as a baseline for comparison""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/ml2_final_project",
+          ),
+          const ProjectsData(
+            project: "Hiring Detective: Unmasking Key Patterns in LinkedIn Job Postings with Frequent Itemset Mining (FIM)",
+            duration: "(AIM-MSDS) Data Mining and Wrangling 2 - Final Project",
+            aboutProject:
+                """Used Frequent Itemset Mining (FIM) to recommend job skills that are often seen together to increase a job candidate's hirability.""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/DMW2_Final",
+          ),
+          const ProjectsData(
+            project: "Feature Analysis on the London Fire Brigade through Clustering",
+            duration: "(AIM-MSDS) Data Mining and Wrangling 2 - Laboratory Project on Clustering Methods",
+            aboutProject:
+                """Used K-Means, Agglomerative and Density Based clustering to assess and highlight inefficiencies in the handling of fire events by the London Fire Brigade""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/London_Fire_Brigade_MSDS2025A_DMW2_LAB_LT5",
+          ),
+        ]),
+    const SkillsFormat(
+        skillName: "Publications",
+        experienceTimeWithSkill: "",
+        details:
+            """x""",
+        certifications: [],
+        projects: [
+          const ProjectsData(
+            project: "Monte Carlo simulation of photon specific absorbed fractions for internal self-dosimetry of the thyroid based on a Filipino model",
+            duration: "Proceedings of the Samahang Pisika ng Pilipinas",
+            aboutProject:
+                """Used MCNP - a general-purpose transport code of many elementary particles to simulate dosage received in human phantoms and created a model phantom catered to Filipino measurements.""",
+            image: "assets/images/others/spp.jpeg",
+            sourceUrl: "https://proceedings.spp-online.org/article/view/SPP-2019-3D-01",
+          ),
+        ]),
+    const SkillsFormat(
+        skillName: "Blog",
+        experienceTimeWithSkill: "",
+        details:
+            """x""",
+        certifications: [],
+        projects: [
+          const ProjectsData(
+            project: "(2024) Jupyter Lab with PySpark hosted in AWS EC2",
+            duration: "",
+            aboutProject:
+                """Guide on hosting Jupyter Lab in AWS EC2""",
+            image: "assets/images/others/medium.png",
+            sourceUrl: "https://medium.com/@vsitucal/2024-jupyter-lab-with-pyspark-hosted-in-aws-ec2-03509f72f3bd?source=friends_link&sk=f131d396b8850ea9d2864fe26b263854",
+          ),
+          const ProjectsData(
+            project: "Introduction to Geopandas using PH GADM and OSM shape files",
+            duration: "",
+            aboutProject:
+                """Guide on Geopandas, GADM and OSM""",
+            image: "assets/images/others/medium.png",
+            sourceUrl: "https://medium.com/@vsitucal/introduction-to-geopandas-using-ph-gadm-and-osm-shape-files-dc5529a8f102?source=friends_link&sk=b7e1884b919bb2b05e31dc9ba6f809c1",
+          ),
+          const ProjectsData(
+            project: "“Data Strategy in Modern Business: A Personal Weltanschauung”",
+            duration: "",
+            aboutProject:
+                """Data Science and AI Ethics blog""",
+            image: "assets/images/others/medium.png",
+            sourceUrl: "https://medium.com/@vsitucal/data-strategy-in-modern-business-a-personal-weltanschauung-7ab908528cb8?source=friends_link&sk=ae84fe94fc148b420199fd7452169dd4",
           ),
         ]),
   ];

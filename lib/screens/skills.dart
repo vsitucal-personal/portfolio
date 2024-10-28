@@ -35,7 +35,7 @@ class _SkillScreenState extends State<SkillScreen> {
         child: Container(
           margin: EdgeInsets.all(size.width / 38), // 1920 div 38 ~ 50
           padding: EdgeInsets.all(15),
-          color: Colors.white70,
+          color: Colors.white,
           alignment: Alignment.topCenter,
           child: ResponsiveGridRow(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,136 +80,6 @@ class SkillDetailView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Center(
-          //   child: Text(
-          //     selectedSkill.skillName,
-          //     style: TextStyle(
-          //       fontSize: 30,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          // ),
-          // Container(
-          //   padding: EdgeInsets.all(14),
-          //   child: Text(
-          //     selectedSkill.details,
-          //     style: TextStyle(
-          //         color: Colors.black87,
-          //         fontStyle: FontStyle.italic,
-          //         fontSize: 15),
-          //     softWrap: true,
-          //   ),
-          // ),
-          // Certification Row Starts
-          // if (selectedSkill.certifications.isNotEmpty)
-          //   Container(
-          //     margin: EdgeInsets.symmetric(vertical: 10),
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Row(
-          //           children: [
-          //             Icon(
-          //               Icons.card_membership,
-          //               size: 35,
-          //             ),
-          //             SizedBox(
-          //               width: 15,
-          //             ),
-          //             Text("Certifications",
-          //                 style: TextStyle(
-          //                   fontSize: 35,
-          //                   fontWeight: FontWeight.bold,
-          //                 )),
-          //           ],
-          //         ),
-          //         ResponsiveGridRow(
-          //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //             children: [
-          //               ...selectedSkill.certifications.map(
-          //                 (cert) => ResponsiveGridCol(
-          //                   lg: 6,
-          //                   md: 12,
-          //                   child: Container(
-          //                     // decoration: BoxDecoration(
-          //                     //   color: Colors.white,
-          //                     //   border: Border(
-          //                     //       right: BorderSide(
-          //                     //           width: 1.0, color: Colors.black)),
-          //                     // ),
-          //                     padding: EdgeInsets.all(10),
-          //                     child: Row(
-          //                       children: [
-          //                         Gravatar(imageUrl: cert.image!),
-          //                         Expanded(
-          //                           child: Container(
-          //                             child: Column(
-          //                               crossAxisAlignment:
-          //                                   CrossAxisAlignment.start,
-          //                               children: [
-          //                                 Center(
-          //                                     child: Text(
-          //                                   cert.certification,
-          //                                   style: TextStyle(
-          //                                       fontSize: 20,
-          //                                       fontWeight: FontWeight.bold),
-          //                                   softWrap: true,
-          //                                 )),
-          //                                 SizedBox(
-          //                                   height: 5,
-          //                                 ),
-          //                                 Text(
-          //                                   cert.infoCertificate!,
-          //                                   style: TextStyle(fontSize: 16),
-          //                                   softWrap: true,
-          //                                 ),
-          //                                 SizedBox(
-          //                                   height: 5,
-          //                                 ),
-          //                                 DefaultTextStyle(
-          //                                   style: TextStyle(
-          //                                       fontSize: 12,
-          //                                       color: SkillsData.fontColor),
-          //                                   child: Row(
-          //                                     children: [
-          //                                       Text(
-          //                                         "validity: ",
-          //                                         style: TextStyle(
-          //                                             fontWeight:
-          //                                                 FontWeight.bold),
-          //                                       ),
-          //                                       Text(cert.validity),
-          //                                     ],
-          //                                   ),
-          //                                 ),
-          //                                 RawMaterialButton(
-          //                                   fillColor: SkillsData.color,
-          //                                   hoverElevation: 10,
-          //                                   shape: RoundedRectangleBorder(
-          //                                       borderRadius:
-          //                                           BorderRadius.circular(10)),
-          //                                   textStyle: TextStyle(
-          //                                     color: SkillsData.buttonFontColor,
-          //                                   ),
-          //                                   child: Text("view"),
-          //                                   onPressed: () {
-          //                                     _launchURL(cert.url!);
-          //                                   },
-          //                                 ),
-          //                               ],
-          //                             ),
-          //                           ),
-          //                         )
-          //                       ],
-          //                     ),
-          //                   ),
-          //                 ),
-          //               ),
-          //             ]),
-          //       ],
-          //     ),
-          //   ),
-
           // Projects Row Starts
           if (selectedSkill.projects.isNotEmpty)
             Container(
@@ -273,24 +143,14 @@ class SkillDetailView extends StatelessWidget {
                                           SizedBox(
                                             height: 5,
                                           ),
-                                          RichText(
-                                              text: TextSpan(
-                                                  text: "Duration: ",
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black,
-                                                    fontSize: 12,
-                                                  ),
-                                                  children: [
-                                                TextSpan(
-                                                  text: proj.duration,
-                                                  style: TextStyle(
-                                                    //color: Colors.black,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
+                                          Text(
+                                                proj.duration,
+                                                style: TextStyle(
+                                                  //color: Colors.black,
+                                                  fontWeight:
+                                                      FontWeight.normal,
                                                 ),
-                                              ])),
+                                              ),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -362,7 +222,7 @@ class Gravatar extends StatelessWidget {
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Colors.transparent,
+          color: Colors.white,
           image: DecorationImage(
             image: NetworkImage(
               imageUrl,
@@ -411,7 +271,7 @@ class SkillsListView extends StatelessWidget {
                   child: RawMaterialButton(
                     fillColor: e == selectedSkill
                         ? SkillsData.color
-                        : Colors.transparent,
+                        : Colors.white,
                     elevation: 0,
                     hoverElevation: 0,
                     shape: RoundedRectangleBorder(
