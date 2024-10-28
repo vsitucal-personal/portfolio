@@ -9,7 +9,8 @@ const data = <dynamic, dynamic>{
 class HomeData {
   static const greeting = "Hello!";
   static const intro = "I am Vincent Itucal";
-  static const profile = "Software Engineer | Data Scientist";
+  static const profile = """A Physicist with Data Science and Software Engineering training with a background in Data Platforms,
+Trading Systems, Pension Systems and Cryptocurrencies.""";
   static const bg_image = "assets/images/work_banner.png";
   // static const user_image = "assets/images/man.png";
   static const user_image = "https://avatars.githubusercontent.com/u/99640086";
@@ -19,9 +20,7 @@ class AboutData {
   static const bg_image = "assets/images/2about.webp";
   static const screenTitle = "About";
   static const about_summary =
-      """I am a Software Engineer. I have a degree in Computer Science and I am pursuing Master's degree in Computer Applications. I love programming and learning new technologies.
-I enjoy almost every thing programming related but python, JavaScript, dart and c# are my favourite languages.
-I have worked on few of my personal projects as well because I think that the best way to learn a new technology is to build something cool with it""";
+      """x""";
   static const List<ExperienceData> experience = [
     const ExperienceData(
       organisation: "Tech Mahindra",
@@ -32,7 +31,7 @@ I have worked on few of my personal projects as well because I think that the be
 \u2022 Develop Backend of Web applications with c# asp.net and MSSQL server.
 \u2022 Automate Tasks with python.
 \u2022 Refactor codebase for better maintainability and performance""",
-      color: Colors.orangeAccent,
+      color: Colors.black,
     ),
   ];
 
@@ -75,22 +74,7 @@ class SkillsData {
         details:
             """"Python is one of my favourite languages. It is my go to language to solve any problem with scriptable solution. Apart form using it to script almost every small problem, I have worked on few of my personal python projects that are a bit larger in scale,
 Professionally I have used python for automating tasks of operations teams at Tech Mahindra.""",
-        certifications: [
-          // const CertificationData(
-          //   certification: "SoloLearn Python Certification",
-          //   validity: "lifetime",
-          //   url: "https://google.com",
-          //   image: "images/man.png",
-          //   infoCertificate: "Completed Python Course with Solo Learn",
-          // ),
-          // const CertificationData(
-          //   certification: "SoloLearn Conda Certification",
-          //   validity: "lifetime",
-          //   url: "https://google.com",
-          //   image: "images/man.png",
-          //   infoCertificate: "Completed Conda Course with Solo Learn",
-          // ),
-        ],
+        certifications: [],
         projects: [
           const ProjectsData(
             project: "Python On Pails",
@@ -109,98 +93,6 @@ Professionally I have used python for automating tasks of operations teams at Te
             sourceUrl: "https://github.com/tg21/wibuster",
           ),
         ]),
-    const SkillsFormat(
-        skillName: "Flutter",
-        experienceTimeWithSkill: "1+ years",
-        details:
-            """I have been working with flutter for more than a year, and I think this is one of the best frameworks available for cross-platform development, backed by big community and all the benefits of dart language are major plus points.
-I have worked with two major flutter projects.""",
-        certifications: [
-          const CertificationData(
-            certification: "Introduction to flutter Certification",
-            validity: "lifetime",
-            url: "https://tg21.github.io/certs/fluuter_certificate.pdf",
-            image:
-                "https://www.londonappbrewery.com/wp-content/uploads/2015/06/London-App-Brewery-Logo-Large.png",
-            infoCertificate: "Completed Introduction to Flutter Course with App Brewery",
-          ),
-        ],
-        projects: [
-          const ProjectsData(
-            project: "The Last Dino Run",
-            duration: "Dec 20 - April 21",
-            aboutProject:
-                """An android game based on Chrome's famous offline game. Made with flutter from scratch without using any game engines like flame or unity.
-It is available on google play store.""",
-            image: "https://appturtles.com/images/last_dino_square.webp",
-            url:
-                "https://play.google.com/store/apps/details?id=com.appturtles.the_last_dino",
-          ),
-          const ProjectsData(
-            project: "This Website",
-            duration: "April 21 - May 21",
-            aboutProject:
-                "This website is made with flutter form scratch. It uses flutter-web with html as web-renderer. Due to framework being very young and flutter-web even younger, there were many limitations to overcome on this project. This website works best on Chromium based desktop browsers but it is made responsive to a great extent and works good on mobile screens as well.",
-            //image: "images/man.png",
-            //url: "#",
-            sourceUrl: "https://github.com/tg21/protfolio",
-          ),
-        ]),
-        const SkillsFormat(
-        skillName: "React",
-        experienceTimeWithSkill: "1+ years",
-        details:
-            """I have been working with react/react-native on my personal projects for more than a year. The first react-native project I picked was ann android chat application, I learned most of react by working on it.
-I have also been working on another react-typeScript web application project, it is in very early stage of development that is why it is not mentioned below""",
-        certifications: [],
-        projects: [
-          const ProjectsData(
-            project: "Unburden App",
-            duration: "Dec 20 - April 21",
-            aboutProject:
-                """An android application made with react-native for anonymous peer support where users can login and share what's on there mind anonymously without fearing any judgement.
-Its backend is powered by node js, express.js and mongo db. It was primarily deployed on an AWS EC2 instance, and currently is running on IBM cloud.
-Unburden app is available on google play store.""",
-            image: "https://appturtles.com/unburden/assets/img/illus/icon.png",
-            url: "https://appturtles.com/unburden",
-          ),
-        ]),
-    const SkillsFormat(
-        skillName: "JAVA",
-        experienceTimeWithSkill: "1+ years",
-        details:
-            """I learned JAVA in college and most of the experience I have with JAVA is from working on my personal android projects. I think that JAVA is a very powerful language if not very developer friendly.
-For android projects I now prefer Kotlin, which is much more developer friendly and just as powerful as JAVA""",
-        certifications: [],
-        projects: [
-          const ProjectsData(
-            project: "Android Web Scraper",
-            duration: "Jan 18 - Dec 18",
-            aboutProject:
-                """An android based web-scraper made with the help of JSoup library. It can scrape static information from websites, using custom css selectors which can be changed in code at any time. It was designed to scrape multiple e-commerce sites for a given query simultaneously and give combined result to user.""",
-            // image: "https://appturtles.com/unburden/assets/img/illus/icon.png",
-            sourceUrl: "https://github.com/tg21/AndroidWebScraper",
-          ),
-          const ProjectsData(
-            project: "Grenade Launcher",
-            duration: "Mar 19 - July 19",
-            aboutProject:
-                """Grenade is a Launcher application for android. It has two branches one is built with JAVA and other with Kotlin.""",
-            // image: "https://appturtles.com/unburden/assets/img/illus/icon.png",
-            sourceUrl: "https://github.com/tg21/GrenadeLauncher",
-          ),
-        ]),
-        const SkillsFormat(
-        skillName: "Angular & C#",
-        experienceTimeWithSkill: "2+ years",
-        details:
-            """I have been working with Angular JS and C# professionally for two years.
-At TechMahindra I developed several internal/in-house web application with Angular JS and C# asp.net for the client which focused on tracking progress of client's production team, storing important day-to-day data in servers which helped eliminate need of maintaining excel sheets at client's end.
-Automatic report generations from data and data visualisation for management that provided more insights into operations and make better business decisions.
-Also used C# .net for desktop application development.
-""",
-        certifications: [],
-        projects: []),
   ];
 }
 
@@ -210,50 +102,34 @@ class ContactData {
     const ContactClass(
       contactName: "Gmail",
       icon: FontAwesomeIcons.solidEnvelope,
-      url: "mailto:gautamtushar21@gmail.com",
+      url: "mailto:vsitucal@gmail.com",
       iconColor: Colors.white,
       bgColor: Colors.red,
       textColor: Colors.white,
     ),
     const ContactClass(
-      contactName: "Twitter",
-      icon: FontAwesomeIcons.twitter,
-      url: "https://twitter.com/CoderWhoLived",
-      iconColor: Colors.white,
-      bgColor: Colors.lightBlueAccent,
-      textColor: Colors.white,
-    ),
-    const ContactClass(
       contactName: "LinkedIn",
       icon: FontAwesomeIcons.linkedin,
-      url: "https://www.linkedin.com/in/gautamtushar21",
+      url: "https://www.linkedin.com/in/vitucal/",
       iconColor: Colors.white,
       bgColor: Colors.indigo,
       textColor: Colors.white,
     ),
     const ContactClass(
-      contactName: "StackOverflow",
-      icon: FontAwesomeIcons.stackOverflow,
-      url: "https://stackoverflow.com/users/story/8737972",
-      iconColor: Colors.deepOrange,
-      textColor: Colors.black,
-      bgColor: Colors.white,
-    ),
-    const ContactClass(
-      contactName: "Hackerrank",
-      icon: FontAwesomeIcons.hackerrank,
-      url: "https://www.hackerrank.com/gautamtushar21",
-      iconColor: Colors.white,
-      textColor: Colors.white,
-      bgColor: Colors.green,
-    ),
-    const ContactClass(
       contactName: "GitHub",
       icon: FontAwesomeIcons.github,
-      url: "https://github.com/tg21",
+      url: "https://github.com/vsitucal-personal",
       iconColor: Colors.white,
       textColor: Colors.white,
       bgColor: Colors.deepPurple,
+    ),
+    const ContactClass(
+      contactName: "Medium",
+      icon: FontAwesomeIcons.medium,
+      url: "https://medium.com/@vsitucal",
+      iconColor: Colors.white,
+      textColor: Colors.white,
+      bgColor: Colors.black,
     ),
   ];
 }

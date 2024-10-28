@@ -27,20 +27,20 @@ var screensData = [
     icon: FontAwesomeIcons.fortAwesome,
     tooltip: "Home",
     widget: HomeScreen(),
-    primaryColor: Colors.indigo,
+    primaryColor: Colors.white,
   ),
   ScreenData(
     icon: FontAwesomeIcons.solidUser,
     tooltip: "About",
     widget: AboutScreen(),
-    primaryColor: Colors.redAccent,
+    primaryColor: Colors.red,
   ),
 
   ScreenData(
     icon: FontAwesomeIcons.solidFileCode,
     tooltip: "Skills",
     widget: SkillScreen(),
-    primaryColor: Colors.pink,
+    primaryColor: Colors.green,
   ),
   // ScreenData(
   //   icon:FontAwesomeIcons.scroll,
@@ -48,16 +48,16 @@ var screensData = [
   //   widget: BlogScreen(),
   //   primaryColor: Colors.deepOrangeAccent,
   //    ),
-  ScreenData(
-    icon: FontAwesomeIcons.palette,
-    tooltip: "Sketches",
-    widget: ArtScreen(),
-    primaryColor: Colors.green,
-  ),
+  // ScreenData(
+  //   icon: FontAwesomeIcons.palette,
+  //   tooltip: "Sketches",
+  //   widget: ArtScreen(),
+  //   primaryColor: Colors.green,
+  // ),
   ScreenData(
     icon: FontAwesomeIcons.solidIdCard,
     tooltip: "contact",
     widget: ContactScreen(),
-    primaryColor: Colors.deepOrangeAccent,
+    primaryColor: Colors.blue,
   ),
 ];

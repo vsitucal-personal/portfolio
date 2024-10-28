@@ -31,13 +31,13 @@ class HomeScreen extends StatelessWidget {
               //   constraints: BoxConstraints(
               //     minHeight: size.height,
               // ),
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ResponsiveGridCol(
                   returnExpanded: true,
                   //alignment: Alignment.center,
                   //flex: 1,
-                  lg: 6,
+                  lg: 1,
                   child: Container(
                     // height: 300,
                     // width: 300,
@@ -63,13 +63,13 @@ class HomeScreen extends StatelessWidget {
                   // decoration: BoxDecoration(color: Colors.green),
                   //flex: 1,
                   returnExpanded: true,
-                  lg: 6,
+                  lg: 5,
                   child: Container(
                     // color: Colors.black54,
-                    alignment: Alignment.topCenter,
+                    alignment: Alignment.centerLeft,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         // Align(
                         //   alignment: Alignment.bottomLeft,
@@ -77,11 +77,11 @@ class HomeScreen extends StatelessWidget {
                         // ),
                         Text(
                           HomeData.greeting
-                              .padRight(HomeData.intro.length * 5, " "),
+                              .padRight(HomeData.greeting.length * 60, " "),
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white60,
+                            color: Colors.white,
                             // shadows: [
                             //   Shadow(
                             //       color: Colors.white54,
@@ -92,11 +92,12 @@ class HomeScreen extends StatelessWidget {
                           softWrap: false,
                         ),
                         Text(
-                          HomeData.intro,
+                          HomeData.intro
+                            .padRight(HomeData.greeting.length * 60, " "),
                           style: TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white70,
+                            color: Colors.white,
                             // shadows: [
                             //   Shadow(
                             //       color: Colors.white54,
@@ -106,11 +107,12 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          HomeData.profile,
+                          HomeData.profile
+                            .padRight(HomeData.greeting.length * 60, " "),
                           style: TextStyle(
-                            fontSize: 35,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white54,
+                            color: Colors.white,
                             // shadows: [
                             //   Shadow(
                             //       color: Colors.white54,
