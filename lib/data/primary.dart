@@ -15,10 +15,10 @@ const data = <dynamic, dynamic>{
 // };
 
 class HomeData {
-  static const greeting = "hello";
-  static const intro = "I'm Tushar Gautam";
+  static const greeting = "Hello!";
+  static const intro = "I am Vincent Itucal";
   static const profile = "Software Engineer";
-  static const bg_image = "assets/images/1home.webp";
+  static const bg_image = "assets/images/work_banner.png";
   // static const user_image = "assets/images/man.png";
   static const user_image = "https://avatars.githubusercontent.com/u/21080598?v=4";
 }
