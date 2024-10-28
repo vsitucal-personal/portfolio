@@ -248,18 +248,6 @@ class SkillsListView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         shrinkChildren: true,
         children: [
-          ResponsiveGridCol(
-            child: Center(
-              child: Text(
-                SkillsData.list_title.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
           ...SkillsData.skills.map((e) => ResponsiveGridCol(
                 lg: 12,
                 md: 2,

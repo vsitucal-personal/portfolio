@@ -107,7 +107,7 @@ class ContactScreen extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Support Me:",
+                "Donate (via Gcash):",
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black

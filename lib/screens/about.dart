@@ -24,21 +24,9 @@ class AboutScreen extends StatelessWidget {
               BlendMode.dstATop,
               ),  
           ),
-          // gradient: LinearGradient(colors: [
-          //   Colors.black,
-          //   Colors.black54
-          //   // Color(0xFF090654),
-          //   // Color(0xFF2D0E41),
-          //   // Color(0xFF441333),
-          //   // Color(0xFF77262A),
-          // ]),
-          //  color: Color(0xFF090654),
         ),
         child: Container(
-          // color: Color.fromARGB(225, 33, 0, 31),
-          // padding: EdgeInsets.only(top: 5, left: 10, right: 10),
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          // alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Column(
             children: [
               HeaderRow(
@@ -123,27 +111,7 @@ class AboutScreen extends StatelessWidget {
                 heading: "Education",
               ),
               Container(
-                // margin: EdgeInsets.only(
-                //   top: 1,
-                // ),
-                // child: ResponsiveRowColumn(
-                //   rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   rowCrossAxisAlignment: CrossAxisAlignment.start,
-                //   rowColumn:
-                //       !ResponsiveWrapper.of(context).isSmallerThan(DESKTOP),
-                //   children: [
-                //     ...AboutData.education.map((ed) => ResponsiveRowColumnItem(
-                //           child: EducationTIle(),
-                //         )),
-                //   ],
-                // ),
                 child: ResponsiveGridRow(
-                  // rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // rowCrossAxisAlignment: CrossAxisAlignment.start,
-                  // rowColumn:
-                  //     !ResponsiveWrapper.of(context).isSmallerThan(DESKTOP),
-                  // rowSegments: 4,
-
                   children: [
                     ...AboutData.education.map((ed) => 
                             ResponsiveGridCol(
@@ -249,7 +217,6 @@ class ExperienceTile extends StatelessWidget {
               Container(
                 color: exp.color,
                 width: 10,
-                //height: 50,
               ),
               SizedBox(
                 width: 10,
@@ -284,16 +251,7 @@ class ExperienceTile extends StatelessWidget {
                         height: 2,
                         width: 400,
                         color: exp.color,
-                        // constraints: BoxConstraints(maxWidth: exp.info.split('\n').fold(0, (len, element) => 
-                        //   element.length*7 > len ? element.length.toDouble()*7 : len
-                        //   // if(element.length > len){
-                        //   //   element.length.toDouble(),
-                        //   // }else{
-                        //   //   len
-                        //   // }
-                        // )),
                       ),
-                      //if(exp.info != null)
                       Container(
                         padding: EdgeInsets.symmetric(vertical: 3),
                         child: Text(
