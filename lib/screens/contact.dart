@@ -35,7 +35,7 @@ class ContactScreen extends StatelessWidget {
                 //color: Colors.green,
                 margin: EdgeInsets.all(20),
                 child: Text(
-                  "Contact",
+                  "Contact ",
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -96,6 +96,17 @@ class ContactScreen extends StatelessWidget {
                       ),
                     )),
               ],
+            ),
+                Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                //color: Colors.green,
+                margin: EdgeInsets.all(20),
+                child: Text(
+                  "??????????????",
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
           ],
         ),

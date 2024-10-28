@@ -4,7 +4,6 @@ import 'package:portfolio/components/floating_action_bar.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:portfolio/data/primary.dart';
 import 'package:portfolio/data/screens_data.dart';
-import 'data/screens_data.dart';
 
 void main() {
   runApp(MyApp());

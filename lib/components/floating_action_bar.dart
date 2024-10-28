@@ -4,8 +4,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/screens_data.dart';
 
-import '../data/screens_data.dart';
-
 // import '../data/screens_data.dart';
 
 class FloatingActionBar extends StatefulWidget {
