@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/screens/advert.dart';
 import 'package:portfolio/screens/contact.dart';
 
 import 'package:portfolio/screens/home.dart';
@@ -45,5 +46,11 @@ var screensData = [
     tooltip: "contact",
     widget: ContactScreen(),
     primaryColor: Colors.blue,
+  ),
+  ScreenData(
+    icon: FontAwesomeIcons.bullhorn,
+    tooltip: "Advertise",
+    widget: AdvertScreen(),
+    primaryColor: Colors.black,
   ),
 ];

@@ -22,6 +22,7 @@
 
 class SkillsFormat {
   final String skillName;
+  final IconData skillIcon;
   final String experienceTimeWithSkill;
   final String details;
   final List<CertificationData> certifications;
@@ -29,6 +30,7 @@ class SkillsFormat {
 
   const SkillsFormat(
       {required this.skillName,
+      required this.skillIcon,
       required this.experienceTimeWithSkill,
       required this.details,
       required this.certifications,

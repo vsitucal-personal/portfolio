@@ -104,6 +104,9 @@ class ContactScreen extends StatelessWidget {
                     )),
               ],
             ),
+            Container(
+              height: 20,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -115,10 +118,16 @@ class ContactScreen extends StatelessWidget {
               ),
             ),
             Container(
-              width: 450, // Set the width of the container
-              height: 700,
-              child: Image.network(ContactData.gcash, fit: BoxFit.fitHeight),
-            )
+              height: 20,
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                width: 330, // Set the width of the container
+                height: 330,
+                child: Image.network(ContactData.gcash, fit: BoxFit.fitHeight),
+              ),
+            ),
           ],
         ),
       ),

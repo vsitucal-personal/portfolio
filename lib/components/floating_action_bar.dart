@@ -237,19 +237,13 @@ class _FloatingActionBarState extends State<FloatingActionBar>
                 alignment: Alignment.centerRight,
                 child: Container(
                     height: widget.size.height / 1.5,
-                    width: 70, //size.width * 0.1,
+                    width: 60, //size.width * 0.1,
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     //width: widget.size.width * 0.1,
                     //alignment: Alignment(0.95,0),
                     decoration: BoxDecoration(
                       color: Colors.white54,
                       borderRadius: BorderRadius.circular(50),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //       color: Colors.black87,
-                      //       blurRadius: 100,
-                      //       offset: Offset(15, -5))
-                      // ]
                     ),
                     child: Stack(
                       children: [
@@ -257,13 +251,13 @@ class _FloatingActionBarState extends State<FloatingActionBar>
                           duration: Duration(milliseconds: 20),
                           alignment: Alignment(0, getYAlignmentBasedOnScroll()),
                           child: Container(
-                            width: 50, //size.width *0.1,
+                            width: 60, //size.width *0.1,
                             height: 50,
                             decoration: BoxDecoration(
                               color: screensData[roundedCurrentScreenIndex < 0
                                       ? 0
                                       : roundedCurrentScreenIndex]
-                                  .primaryColor, // Colors.redAccent,
+                                  .primaryColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
@@ -307,7 +301,7 @@ class _FloatingActionBarState extends State<FloatingActionBar>
               ),
             ),
             Container(
-              width: 70,
+              width: 60,
               alignment: Alignment.center,
               child: RawMaterialButton(
                 onPressed: showOrHideActionBar,

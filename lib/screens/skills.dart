@@ -90,13 +90,13 @@ class SkillDetailView extends StatelessWidget {
                   Row(
                     children: [
                       Icon(
-                        Icons.developer_board_outlined,
+                        selectedSkill.skillIcon,
                         size: 35,
                       ),
                       SizedBox(
                         width: 15,
                       ),
-                      Text("Projects",
+                      Text(selectedSkill.skillName,
                           style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.bold,

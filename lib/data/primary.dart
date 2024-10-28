@@ -8,7 +8,7 @@ const data = <dynamic, dynamic>{
 
 class HomeData {
   static const greeting = "Hello!";
-  static const intro = "I am Vincent Itucal";
+  static const intro = "I'm Vincent Itucal";
   static const profile = """A Physicist with Data Science and Software Engineering training with a background in Data Platforms,
 Trading Systems, Pension Systems and Cryptocurrencies.""";
   static const bg_image = "assets/images/work_banner.png";
@@ -112,6 +112,7 @@ class SkillsData {
   static const List<SkillsFormat> skills = [
     const SkillsFormat(
         skillName: "Portfolio",
+        skillIcon: Icons.developer_board_outlined,
         experienceTimeWithSkill: "",
         details:
             """x""",
@@ -152,6 +153,7 @@ class SkillsData {
         ]),
     const SkillsFormat(
         skillName: "Publications",
+         skillIcon: Icons.book,
         experienceTimeWithSkill: "",
         details:
             """x""",
@@ -168,6 +170,7 @@ class SkillsData {
         ]),
     const SkillsFormat(
         skillName: "Blog",
+        skillIcon: Icons.web_stories_outlined,
         experienceTimeWithSkill: "",
         details:
             """x""",
@@ -200,6 +203,22 @@ class SkillsData {
         ]),
   ];
 }
+
+class AdvertData {
+  static const bg_image = "assets/images/tiger.jfif";
+  static const gcash = "assets/images/gcash.png";
+  static const List<ContactClass> contacts = [
+    const ContactClass(
+      contactName: "Send some donation my way and advertise your brands here!",
+      icon: FontAwesomeIcons.bullhorn,
+      url: "mailto:vsitucal@gmail.com",
+      iconColor: Colors.white,
+      bgColor: Colors.black,
+      textColor: Colors.white,
+    ),
+  ];
+} 
+
 
 class ContactData {
   static const bg_image = "assets/images/seadragon.jfif";
@@ -237,42 +256,5 @@ class ContactData {
       textColor: Colors.white,
       bgColor: Colors.black,
     ),
-  ];
-}
-
-class BlogData {
-  static const bg_image = "assets/images/5litrature.webp";
-  static const primaryColor = Colors.yellow;
-  static const List<BlogClass> blogList = [
-    const BlogClass(
-        name: "How To Fix a bulb without moving a muscle 💡",
-        url: "https://google.com",
-        details: """When the exception was thrown, this was the stack
-C:/b/s/w/ir/cache/builder/src/out/host_debug/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 236:49      throw_
-C:/b/s/w/ir/cache/builder/src/out/host_debug/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 29:3        assertFailed
-packages/flutter/src/widgets/container.dart 274:42                                                                             new
-packages/portfolio/screens/blog.dart 62:32"""),
-    const BlogClass(
-        name: "Why reddit is the worst platform for anything",
-        url: "https://reddit.com",
-        bgColor: Colors.green,
-        textColor: Colors.white,
-        details: """When the exception was thrown, this was the stack
-C:/b/s/w/ir/cache/builder/src/out/host_debug/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 236:49      throw_
-C:/b/s/w/ir/cache/builder/src/out/host_debug/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 29:3        assertFailed
-packages/flutter/src/widgets/container.dart 274:42                                                                             new
-packages/portfolio/screens/blog.dart 62:32"""),
-  ];
-}
-
-class ArtData {
-  static const bg_image = 'assets/images/4art.webp';
-  static const List<String> photos = [
-    'assets/images/art/art1.webp',
-    'assets/images/art/art2.webp',
-    'assets/images/art/art3.webp',
-    'assets/images/art/art4.webp',
-    'assets/images/art/art5.webp',
-    'assets/images/art/art6.webp',
   ];
 }
