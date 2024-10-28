@@ -14,10 +14,16 @@ class AboutScreen extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints(
           minHeight: size.height,
+          maxWidth: size.width
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: NetworkImage(AboutData.bg_image), fit: BoxFit.cover),
+              image: NetworkImage(AboutData.bg_image), fit: BoxFit.cover, 
+              colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.1), 
+              BlendMode.dstATop,
+              ),  
+          ),
           // gradient: LinearGradient(colors: [
           //   Colors.black,
           //   Colors.black54
@@ -29,61 +35,35 @@ class AboutScreen extends StatelessWidget {
           //  color: Color(0xFF090654),
         ),
         child: Container(
-          color: Color.fromARGB(225, 33, 0, 31),
-          //padding: EdgeInsets.only(top: 10, left: 30, right: 10),
-          padding: EdgeInsets.symmetric(horizontal: 50),
+          // color: Color.fromARGB(225, 33, 0, 31),
+          // padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          // alignment: Alignment.center,
           child: Column(
             children: [
-              HeaderRow(
-                icon: Icons.person,
-                heading: AboutData.screenTitle,
-              ),
-              Container(
-                //About User
-                padding: EdgeInsets.only(right: 10, top: 20),
-                child: Text(
-                  AboutData.about_summary,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.white70,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
               HeaderRow(
                 icon: Icons.work,
                 heading: "Experience",
               ),
               Container(
-                // child: ResponsiveRowColumn(
-                //     //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //     //crossAxisAlignment: CrossAxisAlignment.start,
-                //     rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //     rowCrossAxisAlignment: CrossAxisAlignment.start,
-                //     rowColumn:
-                //         !ResponsiveWrapper.of(context).isSmallerThan(DESKTOP),
-                //     children: [
-                //       ...AboutData.experience
-                //           .map((exp) => ResponsiveRowColumnItem(
-                //                 child: ExperienceTile(
-                //                   size: size,
-                //                   exp: exp,
-                //                 ),
-                //               ))
-                //     ]),
                 child: ResponsiveGridRow(
-                  // rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // rowCrossAxisAlignment: CrossAxisAlignment.start,
-                  // rowColumn:
-                  //     !ResponsiveWrapper.of(context).isSmallerThan(DESKTOP),
-                  // rowSegments: 4,
-
                   children: [
                     ...AboutData.experience.map((ex) => 
                             ResponsiveGridCol(
                               lg: 3,
-                              md: 4,
-                              sm: 6,
+                              md: 3,
+                              sm: 4,
+                              child:  ExperienceTile(
+                                  size: size,
+                                  exp: ex,
+                                ),
+                            ),
+                          ),
+                    ...AboutData.experience4.map((ex) => 
+                            ResponsiveGridCol(
+                              lg: 3,
+                              md: 3,
+                              sm: 4,
                               child:  ExperienceTile(
                                   size: size,
                                   exp: ex,
@@ -93,15 +73,59 @@ class AboutScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              
+               Container(
+                child: ResponsiveGridRow(
+                  children: [
+                    ...AboutData.experience2.map((ex) => 
+                            ResponsiveGridCol(
+                              lg: 3,
+                              md: 3,
+                              sm: 4,
+                              child:  ExperienceTile(
+                                  size: size,
+                                  exp: ex,
+                                ),
+                            ),
+                          ),
+                    ...AboutData.experience5.map((ex) => 
+                            ResponsiveGridCol(
+                              lg: 3,
+                              md: 3,
+                              sm: 4,
+                              child:  ExperienceTile(
+                                  size: size,
+                                  exp: ex,
+                                ),
+                            ),
+                          ),
+                  ],
+                ),
+              ),
+              Container(
+                child: ResponsiveGridRow(
+                  children: [
+                    ...AboutData.experience3.map((ex) => 
+                            ResponsiveGridCol(
+                              lg: 3,
+                              md: 3,
+                              sm: 4,
+                              child:  ExperienceTile(
+                                  size: size,
+                                  exp: ex,
+                                ),
+                            ),
+                          ),
+                  ],
+                ),
+              ),
               HeaderRow(
                 icon: Icons.school,
                 heading: "Education",
               ),
               Container(
-                margin: EdgeInsets.only(
-                  top: 10,
-                ),
+                // margin: EdgeInsets.only(
+                //   top: 1,
+                // ),
                 // child: ResponsiveRowColumn(
                 //   rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //   rowCrossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +176,7 @@ class EducationTIle extends StatelessWidget {
     return Container(
       //width: 275,
       //height: 275,
-      margin: EdgeInsets.symmetric(vertical: 10,horizontal:10),
+      margin: EdgeInsets.symmetric(vertical: 10,horizontal :10),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: data.color,
@@ -214,10 +238,10 @@ class ExperienceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.all(10),
-        // constraints: BoxConstraints(
-        //     maxWidth: size.width / (AboutData.experience.length + 1)
-        //     ),
-        //width: 275,
+        constraints: BoxConstraints(
+            maxWidth: size.width / (AboutData.experience.length + 1)
+            ),
+        // width: 275,
         child: IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,7 +255,7 @@ class ExperienceTile extends StatelessWidget {
                 width: 10,
               ),
               DefaultTextStyle(
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: Colors.black),
                 child: Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -251,23 +275,23 @@ class ExperienceTile extends StatelessWidget {
                         child: Text(
                           exp.jobTitle,
                           style: TextStyle(
-                              color: Colors.white.withAlpha(230),
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
                       ),
                       Container(
                         height: 2,
-                        // width:275,
+                        width: 400,
                         color: exp.color,
-                        constraints: BoxConstraints(maxWidth: exp.info.split('\n').fold(0, (len, element) => 
-                          element.length*7 > len ? element.length.toDouble()*7 : len
-                          // if(element.length > len){
-                          //   element.length.toDouble(),
-                          // }else{
-                          //   len
-                          // }
-                        )),
+                        // constraints: BoxConstraints(maxWidth: exp.info.split('\n').fold(0, (len, element) => 
+                        //   element.length*7 > len ? element.length.toDouble()*7 : len
+                        //   // if(element.length > len){
+                        //   //   element.length.toDouble(),
+                        //   // }else{
+                        //   //   len
+                        //   // }
+                        // )),
                       ),
                       //if(exp.info != null)
                       Container(
@@ -300,13 +324,13 @@ class HeaderRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 30),
+      padding: EdgeInsets.only(top: 10),
       child: Row(
         //Page Title
         children: [
           Icon(
             this.icon,
-            color: Colors.white70,
+            color: Colors.black,
             size: 35,
           ),
           SizedBox(
@@ -317,7 +341,7 @@ class HeaderRow extends StatelessWidget {
             this.heading.toUpperCase(),
             style: TextStyle(
               fontSize: 35,
-              color: Colors.white70,
+              color: Colors.black,
             ),
           )
         ],

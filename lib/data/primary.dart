@@ -17,45 +17,87 @@ Trading Systems, Pension Systems and Cryptocurrencies.""";
 }
 
 class AboutData {
-  static const bg_image = "assets/images/2about.webp";
+  static const bg_image = "assets/images/dragon.jfif";
   static const screenTitle = "About";
   static const about_summary =
       """x""";
   static const List<ExperienceData> experience = [
     const ExperienceData(
-      organisation: "Tech Mahindra",
-      jobTitle: "Software Engineer Developer",
-      timeSpan: "July 2019 - present",
-      info: """\u2022 Understand requirements and develop prototypes.
-\u2022 Develop Frontend of Web-applications with angular,js
-\u2022 Develop Backend of Web applications with c# asp.net and MSSQL server.
-\u2022 Automate Tasks with python.
-\u2022 Refactor codebase for better maintainability and performance""",
+      organisation: "Philippine Digital Asset Exchange (PDAX)",
+      jobTitle: "Software Engineer",
+      timeSpan: "Aug 2024 - Present",
+      info: """Crypto as a Service (CaaS)
+\u2022 Led a data warehousing project that leveraged big data technologies to cut report generation time from hours to minutes, enabling seamless integration with Data Science, AI, and Analytics. Recently integrated the data warehouse with Metabase, a business intelligence tool to create dashboards supporting different business units""",
+      color: Colors.black,
+    ),
+  ];
+
+  static const List<ExperienceData> experience2 = [
+    const ExperienceData(
+      organisation: "Security Bank Corporation",
+      jobTitle: "Software Engineer",
+      timeSpan: "Apr 2023 - Aug 2024",
+      info: """Regulatory Reports
+\u2022 Led a team of data engineers in creating a data pipeline for BSP Regulatory Reports
+Cloud Data Platform (CDP)
+\u2022 Helped Migrate on-prem data architecture of the bank to the cloud\n\n\n""",
+      color: Colors.black,
+    ),
+  ];
+
+  static const List<ExperienceData> experience3 = [
+    const ExperienceData(
+      organisation: "Philippine Digital Asset Exchange (PDAX)",
+      jobTitle: "Tech Lead/Software Engineer",
+      timeSpan: "Feb 2022 - Mar 2023",
+      info: """Crypto as a Service (CaaS)
+\u2022 Led a team of software engineers that provided cryptocurrency platform capabilities to partners via
+API microservices. GCrypto under GCash is one of the products deployed in less than 6 months of development""",
+      color: Colors.black,
+    ),
+  ];
+
+  static const List<ExperienceData> experience4 = [
+    const ExperienceData(
+      organisation: "Accenture Philippines",
+      jobTitle: "Software Engineer",
+      timeSpan: "Jul 2021 - Feb 2022",
+      info: """Pension System
+\u2022 Helped in the development, implementation and modernization of a pension system for a Southeast Asian Government.\n""",
+      color: Colors.black,
+    ),
+  ];
+
+  static const List<ExperienceData> experience5 = [
+    const ExperienceData(
+      organisation: "Philippine Digital Asset Exchange (PDAX)",
+      jobTitle: "Software Engineer",
+      timeSpan: "Sep 2019 - Jul 2021",
+      info: """Smart Order Router (SOR) / Best Execution Router (BER)
+\u2022 Developed and implemented Smart Order Router - a system that manages orders for best execution sent in
+the different market venues available to the Chi-X Trading System.
+Fee Engine
+\u2022 Helped in development and testing of Fee engine - an engine which calculates the trading fees for the client.
+Fees are calculated based on what market index the stock belongs to (e.g. TOPIX 500, Nikkei 225, etc), what
+market venue the executions are traded on, and whether the client is a market taker or a maker.""",
       color: Colors.black,
     ),
   ];
 
   static const List<EducationData> education = [
     const EducationData(
-      degree: "Master of Computer Applications",
-      college: "Indira Gandhi National Open University\nDelhi",
-      timeSpan: "July 19 - August 22",
-      color: Colors.indigo,
+      degree: "Master of Science in Data Science (MSDS)",
+      college: "Asian Institute of Management\nMakati",
+      timeSpan: "2023 - 2025",
+      color: Colors.black,
       fontColor: Colors.white,
     ),
     const EducationData(
-      degree: "Bachelor of Computer Science",
-      college: """Bhaskaracharya College Of Applied Sciences
-Delhi University""",
-      timeSpan: "July 16- May 19",
-      color: Colors.amber,
-      fontColor: Colors.black87,
-    ),
-    const EducationData(
-      degree: "XII (Science)",
-      college: """Rajkiya Pratibha Vikas Vidhyalaya
-Dwarka, Delhi""",
-      timeSpan: "2016",
+      degree: "Bachelor of Science in Applied Physics",
+      college: """University of the Philippines Manila\n""",
+      timeSpan: "2013 - 2019",
+      color: Colors.black,
+      fontColor: Colors.white,
     ),
   ];
 }

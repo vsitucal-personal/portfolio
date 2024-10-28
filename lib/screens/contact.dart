@@ -42,7 +42,7 @@ class ContactScreen extends StatelessWidget {
                 //color: Colors.green,
                 margin: EdgeInsets.all(20),
                 child: Text(
-                  "Contact ",
+                  "Contact:",
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
                 ),
               ),
