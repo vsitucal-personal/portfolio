@@ -243,7 +243,7 @@ class SkillDetailView extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.all(10),
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Gravatar(imageUrl: proj.image!),
                                   Expanded(
@@ -253,14 +253,13 @@ class SkillDetailView extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Center(
-                                              child: Text(
+                                          Text(
                                             proj.project,
                                             style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold),
                                             softWrap: true,
-                                          )),
+                                          ),
                                           SizedBox(
                                             height: 5,
                                           ),
