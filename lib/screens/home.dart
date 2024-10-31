@@ -47,14 +47,8 @@ class HomeScreen extends StatelessWidget {
                       radius: 128,
                       foregroundImage: NetworkImage(
                         HomeData.user_image,
-
                       ),
                       backgroundColor: Colors.transparent,
-                      // child: Image.network(
-                      //   HomeData.user_image,
-                      //   height: 256,
-                      //   width: 256,
-                      // ),
                     ),
                   ),
                 ),
@@ -71,23 +65,15 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        // Align(
-                        //   alignment: Alignment.bottomLeft,
-                        //   child:
-                        // ),
                         Text(
                           HomeData.greeting
                               .padRight(HomeData.greeting.length * 60, " "),
+                          // showCursor: true,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            // shadows: [
-                            //   Shadow(
-                            //       color: Colors.white54,
-                            //       offset: Offset(0.5, 0.5),
-                            //       blurRadius: 10)
-                            // ],
+
                           ),
                           softWrap: false,
                         ),

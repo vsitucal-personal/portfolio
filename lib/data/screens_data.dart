@@ -23,29 +23,29 @@ class ScreenData {
 //mainly data for actionbar
 var screensData = [
   ScreenData(
-    icon: FontAwesomeIcons.fortAwesome,
+    icon: FontAwesomeIcons.home,
     tooltip: "Home",
     widget: HomeScreen(),
-    primaryColor: Colors.white,
+    primaryColor: Colors.black,
   ),
   ScreenData(
     icon: FontAwesomeIcons.solidUser,
     tooltip: "About",
     widget: AboutScreen(),
-    primaryColor: Colors.red,
+    primaryColor: Colors.black,
   ),
 
   ScreenData(
     icon: FontAwesomeIcons.solidFileCode,
     tooltip: "Skills",
     widget: SkillScreen(),
-    primaryColor: Colors.green,
+    primaryColor: Colors.black,
   ),
   ScreenData(
     icon: FontAwesomeIcons.solidIdCard,
-    tooltip: "contact",
+    tooltip: "Contact",
     widget: ContactScreen(),
-    primaryColor: Colors.blue,
+    primaryColor: Colors.black,
   ),
   ScreenData(
     icon: FontAwesomeIcons.bullhorn,

@@ -146,7 +146,7 @@ class SkillsData {
             project: "Feature Analysis on the London Fire Brigade through Clustering",
             duration: "(AIM-MSDS) Data Mining and Wrangling 2 - Laboratory Project on Clustering Methods",
             aboutProject:
-                """Used K-Means, Agglomerative and Density Based clustering to assess and highlight inefficiencies in the handling of fire events by the London Fire Brigade""",
+                """Used Representative Based, Agglomerative and Density Based clustering to assess and highlight inefficiencies in the handling of fire events by the London Fire Brigade""",
             image: "assets/images/others/github.png",
             sourceUrl: "https://github.com/vsitucal-personal/London_Fire_Brigade_MSDS2025A_DMW2_LAB_LT5",
           ),
@@ -175,7 +175,16 @@ class SkillsData {
         details:
             """x""",
         certifications: [],
+        
         projects: [
+          const ProjectsData(
+            project: "(2024) AWS EMR Guide",
+            duration: "",
+            aboutProject:
+                """Guide on setting up AWS EMR""",
+            image: "assets/images/others/medium.png",
+            sourceUrl: "https://medium.com/@vsitucal/2024-aws-emr-guide-4fb5adf2c6f3?source=friends_link&sk=05506efda866fe8ac83697e2b8599ed5",
+          ),
           const ProjectsData(
             project: "(2024) Jupyter Lab with PySpark hosted in AWS EC2",
             duration: "",
@@ -224,6 +233,14 @@ class ContactData {
   static const bg_image = "assets/images/seadragon.jfif";
   static const gcash = "assets/images/gcash.png";
   static const List<ContactClass> contacts = [
+    const ContactClass(
+      contactName: "My Resume",
+      icon: FontAwesomeIcons.filePdf,
+      url: "https://s3.ap-southeast-1.amazonaws.com/vitucal.com/Latest_Vitucal_Resume.pdf",
+      iconColor: Colors.white,
+      bgColor: Colors.green,
+      textColor: Colors.white,
+    ),
     const ContactClass(
       contactName: "Gmail",
       icon: FontAwesomeIcons.solidEnvelope,
