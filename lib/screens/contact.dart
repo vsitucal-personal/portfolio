@@ -11,10 +11,6 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      // constraints: BoxConstraints(
-      //   minHeight: size.height,
-      // ),
-      //height: size.height,
       decoration: BoxDecoration(
         image: DecorationImage(
             image: NetworkImage(
@@ -39,8 +35,7 @@ class ContactScreen extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Container(
-                //color: Colors.green,
-                margin: EdgeInsets.all(20),
+                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Text(
                   "Contact:",
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
@@ -49,10 +44,6 @@ class ContactScreen extends StatelessWidget {
             ),
             ResponsiveGridRow(
               shrinkChildren: true,
-              //decoration: BoxDecoration(color: Colors.deepOrangeAccent),
-              //   constraints: BoxConstraints(
-              //     minHeight: size.height,
-              // ),
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 ...ContactData.contacts.map((contact) => ResponsiveGridCol(
@@ -105,24 +96,26 @@ class ContactScreen extends StatelessWidget {
               ],
             ),
             Container(
-              height: 20,
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                "Donate (via Gcash):",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black
-                ),
-              ),
-            ),
-            Container(
-              height: 20,
+              height: 15,
             ),
             Align(
               alignment: Alignment.topLeft,
               child: Container(
+                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Text(
+                  "Donate (via Gcash):",
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
+                ),
+              ),
+            ),
+            Container(
+              height: 15,
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                // margin: EdgeInsets.all(10),
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                 width: 330, // Set the width of the container
                 height: 330,
                 child: Image.network(ContactData.gcash, fit: BoxFit.fitHeight),
