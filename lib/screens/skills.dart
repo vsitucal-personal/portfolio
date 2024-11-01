@@ -106,7 +106,7 @@ class SkillDetailView extends StatelessWidget {
                       Text(selectedSkill.skillName,
                           style: TextStyle(
                             fontSize: 28,
-                            fontWeight: FontWeight.bold,
+                            // fontWeight: FontWeight.bold,
                           )),
                     ],
                   ),
@@ -139,7 +139,7 @@ class SkillDetailView extends StatelessWidget {
                                             Text(
                                               proj.project,
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 18,
                                                   fontWeight: FontWeight.bold),
                                               softWrap: true,
                                             ),
@@ -150,7 +150,7 @@ class SkillDetailView extends StatelessWidget {
                                               proj.aboutProject,
                                               //maxLines: 1,
                                               //overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(fontSize: 16),
+                                              style: TextStyle(fontSize: 14),
                                               softWrap: true,
                                             ),
                                             SizedBox(
@@ -220,7 +220,7 @@ class SkillsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 75,
+      width: 50,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

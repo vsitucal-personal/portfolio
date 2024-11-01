@@ -107,7 +107,7 @@ class AboutListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 75,
+      width: 50,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -264,7 +264,7 @@ class EducationTile extends StatelessWidget {
                   style: TextStyle(
                       color: data.fontColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 19,
+                      fontSize: 18,
                       ),
                       softWrap: true,
                 ),
@@ -275,7 +275,7 @@ class EducationTile extends StatelessWidget {
                   data.college,
                   style: TextStyle(
                       color: data.fontColor,
-                      fontWeight: FontWeight.bold,
+                      // fontWeight: FontWeight.bold,
                       fontSize: 14),
                       softWrap: true,
                 ),
@@ -286,7 +286,7 @@ class EducationTile extends StatelessWidget {
                   data.timeSpan,
                   style: TextStyle(
                       color: data.fontColor,
-                      fontWeight: FontWeight.bold,
+                      // fontWeight: FontWeight.bold,
                       fontSize: 12),
                       softWrap: true,
                 ),

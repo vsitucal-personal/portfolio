@@ -80,7 +80,7 @@ class ContactListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 75,
+      width: 50,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,17 +132,6 @@ class StatelesContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      // decoration: BoxDecoration(
-      //   image: DecorationImage(
-      //       image: NetworkImage(
-      //         ContactData.bg_image), fit: BoxFit.cover,
-      //         colorFilter: ColorFilter.mode(
-      //         Colors.black.withOpacity(0.2), 
-      //         BlendMode.dstATop,             
-      //       ),
-      //       ),
-            
-      // ),
       child: Container(
         //alignment: Alignment.sta,
         constraints: BoxConstraints(
@@ -160,7 +149,11 @@ class StatelesContactScreen extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text(
                     "Contact",
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
+                    style: TextStyle(
+                      fontSize: 28, 
+                      // fontWeight: FontWeight.bold, 
+                      color: Colors.black
+                    ),
                   ),
                 ),
               ),
@@ -201,8 +194,10 @@ class StatelesContactScreen extends StatelessWidget {
                                   child: Text(
                                     contact.contactName,
                                     style: TextStyle(
+                                        fontSize: 18,
                                         color: contact.textColor,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold
+                                    ),
                                   ),
                                 )
                               ],
@@ -220,7 +215,11 @@ class StatelesContactScreen extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text(
                     "Donate (G-Cash)",
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
+                    style: TextStyle(
+                      fontSize: 28, 
+                      // fontWeight: FontWeight.bold, 
+                      color: Colors.black)
+                    ,
                   ),
                 ),
               ),

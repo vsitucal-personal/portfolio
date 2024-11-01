@@ -40,7 +40,7 @@ class AboutData {
       info: """Regulatory Reports
 \u2022 Led a team of data engineers in creating a data pipeline for BSP Regulatory Reports
 Cloud Data Platform (CDP)
-\u2022 Helped Migrate on-prem data architecture of the bank to the cloud\n\n\n\n""",
+\u2022 Helped Migrate on-prem data architecture of the bank to the cloud\n""",
       color: Color.fromARGB(255, 5, 17, 83),
       bgcolor: Colors.white,
       altcolor: Color(0xFF00695C)
@@ -63,7 +63,7 @@ microservices. GCrypto under GCash is one of the products deployed in less than 
       jobTitle: "Software Engineer",
       timeSpan: "Jul 2021 - Feb 2022",
       info: """Pension System
-\u2022 Helped in the development, implementation and modernization of a pension system for a Southeast Asian\nGovernment.\n\n""",
+\u2022 Helped in the development, implementation and modernization of a pension system for a Southeast Asian\nGovernment.\n""",
       color: Color.fromARGB(255, 5, 17, 83),
       bgcolor: Colors.white,
       altcolor: Color(0xFF00695C)
