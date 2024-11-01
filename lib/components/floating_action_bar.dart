@@ -242,7 +242,7 @@ class _FloatingActionBarState extends State<FloatingActionBar>
                     //width: widget.size.width * 0.1,
                     //alignment: Alignment(0.95,0),
                     decoration: BoxDecoration(
-                      color: Colors.white54,
+                      color: Colors.pink,
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: Stack(

@@ -26,7 +26,8 @@ class AboutScreen extends StatelessWidget {
           ),
         ),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          padding: EdgeInsets.fromLTRB(20, 0, 75, 0),
           child: Column(
             children: [
               HeaderRow(
@@ -111,14 +112,16 @@ class AboutScreen extends StatelessWidget {
                 heading: "Education",
               ),
               Container(
+                // width: 1000,
                 child: ResponsiveGridRow(
+                  // width: 1000,
                   children: [
                     ...AboutData.education.map((ed) => 
                             ResponsiveGridCol(
                               lg: 3,
                               md: 4,
                               sm: 6,
-                              child: EducationTIle(data: ed,),
+                              child: EducationTile(data: ed,),
                             ),
                           ),
                   ],
@@ -132,8 +135,8 @@ class AboutScreen extends StatelessWidget {
   }
 }
 
-class EducationTIle extends StatelessWidget {
-  const EducationTIle({
+class EducationTile extends StatelessWidget {
+  const EducationTile({
     Key? key,
     required this.data,
   }) : super(key: key);
@@ -142,10 +145,10 @@ class EducationTIle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //width: 275,
-      //height: 275,
-      margin: EdgeInsets.symmetric(vertical: 10,horizontal :10),
-      padding: EdgeInsets.all(10),
+      // width: 150,
+      // height: 275,
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      // padding: EdgeInsets.fromLTRB(0, 0, 75, 0),
       decoration: BoxDecoration(
           color: data.color,
           borderRadius: BorderRadius.circular(10)),
@@ -206,9 +209,9 @@ class ExperienceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.all(10),
-        constraints: BoxConstraints(
-            maxWidth: size.width / (AboutData.experience.length + 1)
-            ),
+        // constraints: BoxConstraints(
+        //     maxWidth: size.width / (AboutData.experience.length + 1)
+        // ),
         // width: 275,
         child: IntrinsicHeight(
           child: Row(
@@ -249,11 +252,12 @@ class ExperienceTile extends StatelessWidget {
                       ),
                       Container(
                         height: 2,
-                        width: 400,
+                        width: 700,
                         color: exp.color,
                       ),
                       Container(
                         padding: EdgeInsets.symmetric(vertical: 3),
+                        width: 700,
                         child: Text(
                           exp.info,
                           softWrap: true,

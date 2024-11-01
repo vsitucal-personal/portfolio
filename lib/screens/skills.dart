@@ -22,6 +22,7 @@ class _SkillScreenState extends State<SkillScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      padding: EdgeInsets.fromLTRB(0, 0, 60, 0),
       constraints: BoxConstraints(
         minHeight: size.height,
       ),

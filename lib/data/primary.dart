@@ -27,7 +27,7 @@ class AboutData {
       jobTitle: "Software Engineer",
       timeSpan: "Aug 2024 - Present",
       info: """Crypto as a Service (CaaS)
-\u2022 Led a data warehousing project that leveraged big data technologies to cut report generation time from hours to minutes, enabling seamless integration with Data Science, AI, and Analytics. Recently integrated the data warehouse with Metabase, a business intelligence tool to create dashboards supporting different business units""",
+\u2022 Led a data warehousing project that leveraged big data technologies to cut report generation time from hours to minutes, enabling seamless integration with Data Science, AI, and Analytics. Recently integrated the data warehouse with Metabase, a business intelligence tool to create dashboards supporting different business units\n""",
       color: Colors.black,
     ),
   ];
@@ -40,7 +40,7 @@ class AboutData {
       info: """Regulatory Reports
 \u2022 Led a team of data engineers in creating a data pipeline for BSP Regulatory Reports
 Cloud Data Platform (CDP)
-\u2022 Helped Migrate on-prem data architecture of the bank to the cloud\n\n\n""",
+\u2022 Helped Migrate on-prem data architecture of the bank to the cloud\n\n\n\n""",
       color: Colors.black,
     ),
   ];
@@ -51,8 +51,8 @@ Cloud Data Platform (CDP)
       jobTitle: "Tech Lead/Software Engineer",
       timeSpan: "Feb 2022 - Mar 2023",
       info: """Crypto as a Service (CaaS)
-\u2022 Led a team of software engineers that provided cryptocurrency platform capabilities to partners via
-API microservices. GCrypto under GCash is one of the products deployed in less than 6 months of development""",
+\u2022 Led a team of software engineers that provided cryptocurrency platform capabilities to partners via API
+microservices. GCrypto under GCash is one of the products deployed in less than 6 months of development\n""",
       color: Colors.black,
     ),
   ];
@@ -63,15 +63,15 @@ API microservices. GCrypto under GCash is one of the products deployed in less t
       jobTitle: "Software Engineer",
       timeSpan: "Jul 2021 - Feb 2022",
       info: """Pension System
-\u2022 Helped in the development, implementation and modernization of a pension system for a Southeast Asian Government.\n""",
+\u2022 Helped in the development, implementation and modernization of a pension system for a Southeast Asian\nGovernment.\n\n""",
       color: Colors.black,
     ),
   ];
 
   static const List<ExperienceData> experience5 = [
     const ExperienceData(
-      organisation: "Philippine Digital Asset Exchange (PDAX)",
-      jobTitle: "Software Engineer",
+      organisation: "Chi-X Global Technology (Philippines) Inc",
+      jobTitle: "Software Developer",
       timeSpan: "Sep 2019 - Jul 2021",
       info: """Smart Order Router (SOR) / Best Execution Router (BER)
 \u2022 Developed and implemented Smart Order Router - a system that manages orders for best execution sent in
@@ -79,7 +79,7 @@ the different market venues available to the Chi-X Trading System.
 Fee Engine
 \u2022 Helped in development and testing of Fee engine - an engine which calculates the trading fees for the client.
 Fees are calculated based on what market index the stock belongs to (e.g. TOPIX 500, Nikkei 225, etc), what
-market venue the executions are traded on, and whether the client is a market taker or a maker.""",
+market venue the executions are traded on, and whether the client is a market taker or a maker.\n""",
       color: Colors.black,
     ),
   ];
