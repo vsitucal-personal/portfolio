@@ -12,7 +12,6 @@ class HomeData {
   static const profile = """A Physicist with Data Science and Software Engineering training with a background in Data Platforms,
 Trading Systems, Pension Systems and Cryptocurrencies.""";
   static const bg_image = "assets/images/work_banner.png";
-  // static const user_image = "assets/images/man.png";
   static const user_image = "https://avatars.githubusercontent.com/u/99640086";
 }
 
@@ -28,7 +27,9 @@ class AboutData {
       timeSpan: "Aug 2024 - Present",
       info: """Crypto as a Service (CaaS)
 \u2022 Led a data warehousing project that leveraged big data technologies to cut report generation time from hours to minutes, enabling seamless integration with Data Science, AI, and Analytics. Recently integrated the data warehouse with Metabase, a business intelligence tool to create dashboards supporting different business units\n""",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
+      bgcolor: Colors.white,
+      altcolor: Color(0xFF00695C)
     ),
   ];
 
@@ -41,7 +42,9 @@ class AboutData {
 \u2022 Led a team of data engineers in creating a data pipeline for BSP Regulatory Reports
 Cloud Data Platform (CDP)
 \u2022 Helped Migrate on-prem data architecture of the bank to the cloud\n\n\n\n""",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
+      bgcolor: Colors.white,
+      altcolor: Color(0xFF00695C)
     ),
   ];
 
@@ -53,7 +56,9 @@ Cloud Data Platform (CDP)
       info: """Crypto as a Service (CaaS)
 \u2022 Led a team of software engineers that provided cryptocurrency platform capabilities to partners via API
 microservices. GCrypto under GCash is one of the products deployed in less than 6 months of development\n""",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
+      bgcolor: Colors.white,
+      altcolor: Color(0xFF00695C)
     ),
   ];
 
@@ -64,13 +69,14 @@ microservices. GCrypto under GCash is one of the products deployed in less than 
       timeSpan: "Jul 2021 - Feb 2022",
       info: """Pension System
 \u2022 Helped in the development, implementation and modernization of a pension system for a Southeast Asian\nGovernment.\n\n""",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
+      bgcolor: Colors.white,
+      altcolor: Color(0xFF00695C)
     ),
   ];
-
   static const List<ExperienceData> experience5 = [
     const ExperienceData(
-      organisation: "Chi-X Global Technology (Philippines) Inc",
+      organisation: "Chi-X Global Technology (Philippines) Inc.",
       jobTitle: "Software Developer",
       timeSpan: "Sep 2019 - Jul 2021",
       info: """Smart Order Router (SOR) / Best Execution Router (BER)
@@ -80,23 +86,29 @@ Fee Engine
 \u2022 Helped in development and testing of Fee engine - an engine which calculates the trading fees for the client.
 Fees are calculated based on what market index the stock belongs to (e.g. TOPIX 500, Nikkei 225, etc), what
 market venue the executions are traded on, and whether the client is a market taker or a maker.\n""",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
+      bgcolor: Colors.white,
+      altcolor: Color(0xFF00695C)
     ),
   ];
 
   static const List<EducationData> education = [
     const EducationData(
+      url: "https://asite.aim.edu/programs/master-of-science-in-data-science/",
+      image: "assets/images/aimlogo.png",
       degree: "Master of Science in Data Science (MSDS)",
       college: "Asian Institute of Management\nMakati",
       timeSpan: "2023 - 2025",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
       fontColor: Colors.white,
     ),
     const EducationData(
-      degree: "Bachelor of Science in Applied Physics",
+      url: "https://cas.upm.edu.ph/undergraduate-degree-programs-2/",
+      image: "assets/images/upmanila.png",
+      degree: "Bachelor of Science in Applied Physics (Health Physics Concentration)",
       college: """University of the Philippines Manila\n""",
       timeSpan: "2013 - 2019",
-      color: Colors.black,
+      color: Color.fromARGB(255, 5, 17, 83),
       fontColor: Colors.white,
     ),
   ];
@@ -143,7 +155,7 @@ class SkillsData {
             sourceUrl: "https://github.com/vsitucal-personal/DMW2_Final",
           ),
           const ProjectsData(
-            project: "Feature Analysis on the London Fire Brigade through Clustering",
+            project: "Feature Analysis on the London Fire Brigade through Clustering\n",
             duration: "(AIM-MSDS) Data Mining and Wrangling 2 - Laboratory Project on Clustering Methods",
             aboutProject:
                 """Used Representative Based, Agglomerative and Density Based clustering to assess and highlight inefficiencies in the handling of fire events by the London Fire Brigade""",

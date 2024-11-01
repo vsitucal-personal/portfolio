@@ -2,9 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/components/responsive_grid.dart';
 import 'package:portfolio/data/primary.dart';
 import 'package:portfolio/data/types.dart';
-// import 'package:responsive_framework/responsive_framework.dart';
-// import 'package:responsive_framework/responsive_row_column.dart';
-// import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class Gravatar extends StatelessWidget {
+  final String imageUrl;
+  const Gravatar({Key? key, required this.imageUrl}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 100,
+        height: 100,
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.white,
+          image: DecorationImage(
+            image: NetworkImage(
+              imageUrl,
+            ),
+            // fit: BoxFit.contain,
+            // scale: 1,
+          ),
+        ));
+  }
+}
 
 class AboutScreen extends StatelessWidget {
   @override
@@ -35,73 +57,71 @@ class AboutScreen extends StatelessWidget {
                 heading: "Experience",
               ),
               Container(
-                child: ResponsiveGridRow(
+                child: Row(
                   children: [
                     ...AboutData.experience.map((ex) => 
-                            ResponsiveGridCol(
-                              lg: 3,
-                              md: 3,
-                              sm: 4,
-                              child:  ExperienceTile(
+                            Column(
+                              // lg: 3,
+                              // md: 4,
+                              // sm: 6,
+                              children:  [
+                                ExperienceTile(
                                   size: size,
                                   exp: ex,
                                 ),
+                              ]
                             ),
                           ),
                     ...AboutData.experience4.map((ex) => 
-                            ResponsiveGridCol(
-                              lg: 3,
-                              md: 3,
-                              sm: 4,
-                              child:  ExperienceTile(
+                            Column(
+                              children:  [  
+                                ExperienceTile(
                                   size: size,
                                   exp: ex,
                                 ),
+                              ]
                             ),
                           ),
                   ],
                 ),
               ),
                Container(
-                child: ResponsiveGridRow(
+                child: Row(
                   children: [
                     ...AboutData.experience2.map((ex) => 
-                            ResponsiveGridCol(
-                              lg: 3,
-                              md: 3,
-                              sm: 4,
-                              child:  ExperienceTile(
+                            Column(
+                              children:  [  
+                                ExperienceTile(
                                   size: size,
                                   exp: ex,
                                 ),
+                              ]
                             ),
                           ),
                     ...AboutData.experience5.map((ex) => 
-                            ResponsiveGridCol(
-                              lg: 3,
-                              md: 3,
-                              sm: 4,
-                              child:  ExperienceTile(
+                            Column(
+                              children:  [  
+                                ExperienceTile(
                                   size: size,
                                   exp: ex,
                                 ),
+                              ]
                             ),
                           ),
                   ],
                 ),
               ),
               Container(
-                child: ResponsiveGridRow(
+                child: Row(
                   children: [
                     ...AboutData.experience3.map((ex) => 
-                            ResponsiveGridCol(
-                              lg: 3,
-                              md: 3,
-                              sm: 4,
-                              child:  ExperienceTile(
+                            Column(
+                              children:  [  
+                                ExperienceTile(
                                   size: size,
                                   exp: ex,
                                 ),
+                              ]
                             ),
                           ),
                   ],
@@ -112,16 +132,13 @@ class AboutScreen extends StatelessWidget {
                 heading: "Education",
               ),
               Container(
-                // width: 1000,
-                child: ResponsiveGridRow(
-                  // width: 1000,
+                child: Row(
                   children: [
                     ...AboutData.education.map((ed) => 
-                            ResponsiveGridCol(
-                              lg: 3,
-                              md: 4,
-                              sm: 6,
-                              child: EducationTile(data: ed,),
+                            Column(
+                              children: [
+                                EducationTile(data: ed,),
+                              ]
                             ),
                           ),
                   ],
@@ -141,56 +158,72 @@ class EducationTile extends StatelessWidget {
     required this.data,
   }) : super(key: key);
 
+  void _launchURL(String _url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : print('Cant launch this url');
+
   final EducationData data;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // width: 150,
-      // height: 275,
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      // padding: EdgeInsets.fromLTRB(0, 0, 75, 0),
-      decoration: BoxDecoration(
-          color: data.color,
-          borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal:8.0),
-            child: Text(
-              data.degree,
-              style: TextStyle(
-                  color: data.fontColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  ),
-                  softWrap: true,
-            ),
+    return InkWell(
+      onTap: () {
+        _launchURL(data.url); // Replace with your function or action
+      },
+      child: Container(
+        width: 850,
+        // height: 275,
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: EdgeInsets.all(10),
+        // padding: EdgeInsets.fromLTRB(0, 0, 75, 0),
+        decoration: BoxDecoration(
+            color: data.color,
+            borderRadius: BorderRadius.circular(10)
+        ),
+        child: Row(
+          children: [
+            Gravatar(imageUrl: data.image!),
+            Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:8.0),
+                child: Text(
+                  data.degree,
+                  style: TextStyle(
+                      color: data.fontColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      ),
+                      softWrap: true,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  data.college,
+                  style: TextStyle(
+                      color: data.fontColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                      softWrap: true,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  data.timeSpan,
+                  style: TextStyle(
+                      color: data.fontColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13),
+                      softWrap: true,
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              data.college,
-              style: TextStyle(
-                  color: data.fontColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15),
-                  softWrap: true,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              data.timeSpan,
-              style: TextStyle(
-                  color: data.fontColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13),
-                  softWrap: true,
-            ),
-          ),
-        ],
-      ),
+          ]
+        )
+      )
     );
   }
 }
@@ -208,24 +241,26 @@ class ExperienceTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        width: 850,
         padding: EdgeInsets.all(10),
-        // constraints: BoxConstraints(
-        //     maxWidth: size.width / (AboutData.experience.length + 1)
-        // ),
-        // width: 275,
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        decoration: BoxDecoration(
+          color: exp.bgcolor,
+          borderRadius: BorderRadius.circular(10)
+        ),
         child: IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                color: exp.color,
+                color: exp.altcolor,
                 width: 10,
               ),
               SizedBox(
                 width: 10,
               ),
               DefaultTextStyle(
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: exp.color),
                 child: Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -235,7 +270,7 @@ class ExperienceTile extends StatelessWidget {
                         child: Text(
                           exp.organisation,
                           style: TextStyle(
-                              color: exp.color,
+                              color: exp.altcolor,
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
@@ -245,7 +280,7 @@ class ExperienceTile extends StatelessWidget {
                         child: Text(
                           exp.jobTitle,
                           style: TextStyle(
-                              color: Colors.black,
+                              color: exp.color,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
@@ -253,7 +288,7 @@ class ExperienceTile extends StatelessWidget {
                       Container(
                         height: 2,
                         width: 700,
-                        color: exp.color,
+                        color: exp.altcolor,
                       ),
                       Container(
                         padding: EdgeInsets.symmetric(vertical: 3),
@@ -265,7 +300,7 @@ class ExperienceTile extends StatelessWidget {
                       ),
                       Text(
                         exp.timeSpan,
-                        style: TextStyle(color: exp.color),
+                        style: TextStyle(color: exp.altcolor),
                       ),
                     ],
                   ),

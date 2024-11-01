@@ -5,9 +5,14 @@
   final String jobTitle;
   final String info;
   final String timeSpan;
+  final Color altcolor;
   final Color color; //date span as string ,e.g- July 2019 - Aug 2021
+  final Color bgcolor;
 
-  const ExperienceData({required this.organisation, required this.jobTitle, required this.timeSpan, this.info="",this.color = Colors.white70});
+  const ExperienceData({
+    required this.organisation, required this.jobTitle, required this.timeSpan, this.info="",this.color = Colors.white70,
+    this.bgcolor = Colors.white, this.altcolor = Colors.white
+  });
 }
 
  class EducationData{
@@ -16,8 +21,13 @@
   final String timeSpan;
   final Color color; //date span as string ,e.g- July 2019 - Aug 2021
   final Color fontColor;
+  final String? image;
+  final String url;
 
-  const EducationData({required this.degree, required this.college, required this.timeSpan, this.color = Colors.white70, this.fontColor = Colors.black});
+  const EducationData({
+    required this.degree, required this.college, required this.timeSpan, required this.url,this.color = Colors.white70, 
+    this.fontColor = Colors.black, this.image = 'https://image.flaticon.com/icons/png/128/3688/3688571.png'
+  });
 }
 
 class SkillsFormat {
@@ -67,7 +77,7 @@ class ProjectsData {
       required this.duration,
       this.url,
       this.image = 'https://image.flaticon.com/icons/png/128/1005/1005142.png',
-      this.sourceUrl
+      required this.sourceUrl
       });
 }
 

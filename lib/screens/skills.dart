@@ -36,7 +36,7 @@ class _SkillScreenState extends State<SkillScreen> {
         child: Container(
           margin: EdgeInsets.all(size.width / 38), // 1920 div 38 ~ 50
           padding: EdgeInsets.all(15),
-          color: Colors.white,
+          color: Colors.white70,
           alignment: Alignment.topCenter,
           child: ResponsiveGridRow(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,93 +111,87 @@ class SkillDetailView extends StatelessWidget {
                           (proj) => ResponsiveGridCol(
                             lg: 6,
                             md: 12,
-                            child: Container(
-                              padding: EdgeInsets.all(10),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Gravatar(imageUrl: proj.image!),
-                                  Expanded(
-                                    child: Container(
-                                      padding: EdgeInsets.only(left: 10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            proj.project,
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold),
-                                            softWrap: true,
-                                          ),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            proj.aboutProject,
-                                            //maxLines: 1,
-                                            //overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(fontSize: 16),
-                                            softWrap: true,
-                                          ),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                                proj.duration,
-                                                style: TextStyle(
-                                                  //color: Colors.black,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
-                                              ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              if (proj.url != null)
-                                                RawMaterialButton(
-                                                  fillColor: Colors.pink,
-                                                  hoverElevation: 10,
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10)),
-                                                  textStyle: TextStyle(
-                                                    color: Colors.white,
+                            child: InkWell(
+                              child: Container(
+                                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                                ),
+                                padding: EdgeInsets.all(10),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Gravatar(imageUrl: proj.image!),
+                                    Expanded(
+                                      child: Container(
+                                        padding: EdgeInsets.only(left: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              proj.project,
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold),
+                                              softWrap: true,
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              proj.aboutProject,
+                                              //maxLines: 1,
+                                              //overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(fontSize: 16),
+                                              softWrap: true,
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                                  proj.duration,
+                                                  style: TextStyle(
+                                                    //color: Colors.black,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                   ),
-                                                  child: Text("view"),
-                                                  onPressed: () {
-                                                    _launchURL(proj.url!);
-                                                  },
                                                 ),
-                                              if (proj.sourceUrl != null)
-                                                RawMaterialButton(
-                                                  fillColor: SkillsData
-                                                      .secondaryButtonColor,
-                                                  hoverElevation: 10,
-                                                  padding: EdgeInsets.all(10),
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10)),
-                                                  textStyle: TextStyle(
-                                                    color: Colors.white,
-                                                  ),
-                                                  child: Text("Link"),
-                                                  onPressed: () {
-                                                    _launchURL(proj.sourceUrl!);
-                                                  },
-                                                ),
-                                            ],
-                                          ),
-                                        ],
+                                            // Row(
+                                            //   mainAxisAlignment:
+                                            //       MainAxisAlignment.spaceBetween,
+                                            //   children: [
+                                            //     if (proj.sourceUrl != null)
+                                            //       RawMaterialButton(
+                                            //         fillColor: SkillsData
+                                            //             .secondaryButtonColor,
+                                            //         hoverElevation: 10,
+                                            //         padding: EdgeInsets.all(10),
+                                            //         shape: RoundedRectangleBorder(
+                                            //             borderRadius:
+                                            //                 BorderRadius.circular(
+                                            //                     10)),
+                                            //         textStyle: TextStyle(
+                                            //           color: Colors.white,
+                                            //         ),
+                                            //         child: Text("Link"),
+                                            //         onPressed: () {
+                                            //           _launchURL(proj.sourceUrl!);
+                                            //         },
+                                            //       ),
+                                            //   ],
+                                            // ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
+                              onTap: () {
+                                _launchURL(proj.sourceUrl!);
+                              },
                             ),
                           ),
                         ),
