@@ -22,21 +22,26 @@ class _SkillScreenState extends State<SkillScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 0, 60, 0),
+      padding: EdgeInsets.fromLTRB(0, 0, 110, 0),
       constraints: BoxConstraints(
         minHeight: size.height,
       ),
       decoration: BoxDecoration(
-        color: Colors.green
-        // image: DecorationImage(
-        //     image: NetworkImage(SkillsData.bg_image), fit: BoxFit.cover),
-      ),
+          image: DecorationImage(
+              image: NetworkImage(SkillsData.bg_image), fit: BoxFit.cover, 
+              colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.1), 
+              BlendMode.dstATop,
+              ),  
+          ),
+        ),
       child: DefaultTextStyle(
         style: TextStyle(color: SkillsData.fontColor),
         child: Container(
-          margin: EdgeInsets.all(size.width / 38), // 1920 div 38 ~ 50
-          padding: EdgeInsets.all(15),
-          color: Colors.white70,
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          // margin: EdgeInsets.all(size.width / 38), // 1920 div 38 ~ 50
+          // padding: EdgeInsets.all(15),
+          // color: Colors.green,
           alignment: Alignment.topCenter,
           child: ResponsiveGridRow(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,6 +82,7 @@ class SkillDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // width: 650,
       padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,14 +98,14 @@ class SkillDetailView extends StatelessWidget {
                     children: [
                       Icon(
                         selectedSkill.skillIcon,
-                        size: 35,
+                        size: 30,
                       ),
                       SizedBox(
                         width: 15,
                       ),
                       Text(selectedSkill.skillName,
                           style: TextStyle(
-                            fontSize: 35,
+                            fontSize: 28,
                             fontWeight: FontWeight.bold,
                           )),
                     ],
@@ -115,7 +121,7 @@ class SkillDetailView extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: Colors.green,
                                   borderRadius: BorderRadius.circular(10)
                                 ),
                                 padding: EdgeInsets.all(10),
@@ -158,30 +164,6 @@ class SkillDetailView extends StatelessWidget {
                                                         FontWeight.normal,
                                                   ),
                                                 ),
-                                            // Row(
-                                            //   mainAxisAlignment:
-                                            //       MainAxisAlignment.spaceBetween,
-                                            //   children: [
-                                            //     if (proj.sourceUrl != null)
-                                            //       RawMaterialButton(
-                                            //         fillColor: SkillsData
-                                            //             .secondaryButtonColor,
-                                            //         hoverElevation: 10,
-                                            //         padding: EdgeInsets.all(10),
-                                            //         shape: RoundedRectangleBorder(
-                                            //             borderRadius:
-                                            //                 BorderRadius.circular(
-                                            //                     10)),
-                                            //         textStyle: TextStyle(
-                                            //           color: Colors.white,
-                                            //         ),
-                                            //         child: Text("Link"),
-                                            //         onPressed: () {
-                                            //           _launchURL(proj.sourceUrl!);
-                                            //         },
-                                            //       ),
-                                            //   ],
-                                            // ),
                                           ],
                                         ),
                                       ),
@@ -216,14 +198,14 @@ class Gravatar extends StatelessWidget {
         height: 100,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          color: Colors.white,
+          shape: BoxShape.circle,
+          color: Colors.green,
           image: DecorationImage(
             image: NetworkImage(
               imageUrl,
             ),
             fit: BoxFit.fitHeight,
-            scale: 100,
+            // scale: 100,
           ),
         ));
   }
@@ -238,6 +220,7 @@ class SkillsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 75,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -247,9 +230,9 @@ class SkillsListView extends StatelessWidget {
                 lg: 12,
                 md: 2,
                 sm: 3,
-                xs: 3,
-                //margin: EdgeInsets.all(5),
+                xs: 3,   
                 child: Container(
+                  margin: EdgeInsets.all(5),
                   alignment: Alignment.center,
                   child: RawMaterialButton(
                     fillColor: e == selectedSkill

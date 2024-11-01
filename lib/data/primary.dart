@@ -22,6 +22,7 @@ class AboutData {
       """x""";
   static const List<ExperienceData> experience = [
     const ExperienceData(
+      image: "assets/images/pdax.png",
       organisation: "Philippine Digital Asset Exchange (PDAX)",
       jobTitle: "Software Engineer",
       timeSpan: "Aug 2024 - Present",
@@ -31,12 +32,10 @@ class AboutData {
       bgcolor: Colors.white,
       altcolor: Color(0xFF00695C)
     ),
-  ];
-
-  static const List<ExperienceData> experience2 = [
     const ExperienceData(
+      image: "assets/images/secb.png",
       organisation: "Security Bank Corporation",
-      jobTitle: "Software Engineer",
+      jobTitle: "Lead Data Engineer",
       timeSpan: "Apr 2023 - Aug 2024",
       info: """Regulatory Reports
 \u2022 Led a team of data engineers in creating a data pipeline for BSP Regulatory Reports
@@ -46,10 +45,8 @@ Cloud Data Platform (CDP)
       bgcolor: Colors.white,
       altcolor: Color(0xFF00695C)
     ),
-  ];
-
-  static const List<ExperienceData> experience3 = [
     const ExperienceData(
+      image: "assets/images/pdax.png",
       organisation: "Philippine Digital Asset Exchange (PDAX)",
       jobTitle: "Tech Lead/Software Engineer",
       timeSpan: "Feb 2022 - Mar 2023",
@@ -60,10 +57,8 @@ microservices. GCrypto under GCash is one of the products deployed in less than 
       bgcolor: Colors.white,
       altcolor: Color(0xFF00695C)
     ),
-  ];
-
-  static const List<ExperienceData> experience4 = [
     const ExperienceData(
+      image: "assets/images/acn.png",
       organisation: "Accenture Philippines",
       jobTitle: "Software Engineer",
       timeSpan: "Jul 2021 - Feb 2022",
@@ -73,9 +68,8 @@ microservices. GCrypto under GCash is one of the products deployed in less than 
       bgcolor: Colors.white,
       altcolor: Color(0xFF00695C)
     ),
-  ];
-  static const List<ExperienceData> experience5 = [
     const ExperienceData(
+      image: "assets/images/chix.png",
       organisation: "Chi-X Global Technology (Philippines) Inc.",
       jobTitle: "Software Developer",
       timeSpan: "Sep 2019 - Jul 2021",
@@ -104,7 +98,7 @@ market venue the executions are traded on, and whether the client is a market ta
     ),
     const EducationData(
       url: "https://cas.upm.edu.ph/undergraduate-degree-programs-2/",
-      image: "assets/images/upmanila.png",
+      image: "assets/images/upmanila2.png",
       degree: "Bachelor of Science in Applied Physics (Health Physics Concentration)",
       college: """University of the Philippines Manila\n""",
       timeSpan: "2013 - 2019",
@@ -112,10 +106,19 @@ market venue the executions are traded on, and whether the client is a market ta
       fontColor: Colors.white,
     ),
   ];
+
+  static const selectedAbout = [
+    "Experience",
+    "Education"
+  ];
+  static const color = Colors.pink;
+  static const secondaryButtonColor = Colors.blueGrey;
+  static const fontColor = Colors.black;
+  static const buttonFontColor = Colors.white;
 }
 
 class SkillsData {
-  static const bg_image = "assets/images/3showcase.webp";
+  static const bg_image = "assets/images/hanya.jfif";
   static const list_title = "skills";
   static const color = Colors.pink;
   static const secondaryButtonColor = Colors.blueGrey;
@@ -286,4 +289,13 @@ class ContactData {
       bgColor: Colors.black,
     ),
   ];
+
+  static const selectedContact = [
+    "Contact",
+    "Donate"
+  ];
+  static const color = Colors.pink;
+  static const secondaryButtonColor = Colors.blueGrey;
+  static const fontColor = Colors.black;
+  static const buttonFontColor = Colors.white;
 }

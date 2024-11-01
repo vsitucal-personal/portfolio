@@ -237,7 +237,7 @@ class _FloatingActionBarState extends State<FloatingActionBar>
                 alignment: Alignment.centerRight,
                 child: Container(
                     height: widget.size.height / 1.5,
-                    width: 60, //size.width * 0.1,
+                    width: 70, //size.width * 0.1,
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     //width: widget.size.width * 0.1,
                     //alignment: Alignment(0.95,0),
@@ -251,7 +251,7 @@ class _FloatingActionBarState extends State<FloatingActionBar>
                           duration: Duration(milliseconds: 20),
                           alignment: Alignment(0, getYAlignmentBasedOnScroll()),
                           child: Container(
-                            width: 60, //size.width *0.1,
+                            width: 50, //size.width *0.1,
                             height: 50,
                             decoration: BoxDecoration(
                               color: screensData[roundedCurrentScreenIndex < 0
@@ -301,7 +301,7 @@ class _FloatingActionBarState extends State<FloatingActionBar>
               ),
             ),
             Container(
-              width: 60,
+              width: 70,
               alignment: Alignment.center,
               child: RawMaterialButton(
                 onPressed: showOrHideActionBar,

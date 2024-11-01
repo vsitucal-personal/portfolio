@@ -8,10 +8,12 @@
   final Color altcolor;
   final Color color; //date span as string ,e.g- July 2019 - Aug 2021
   final Color bgcolor;
+  final String? image;
 
   const ExperienceData({
     required this.organisation, required this.jobTitle, required this.timeSpan, this.info="",this.color = Colors.white70,
-    this.bgcolor = Colors.white, this.altcolor = Colors.white
+    this.bgcolor = Colors.white, this.altcolor = Colors.white,
+    this.image = 'https://image.flaticon.com/icons/png/128/3688/3688571.png'
   });
 }
 
