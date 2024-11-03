@@ -22,19 +22,17 @@ class _SkillScreenState extends State<SkillScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      color: Color.fromARGB(230, 255, 255, 255),
       padding: EdgeInsets.fromLTRB(0, 0, 110, 0),
       constraints: BoxConstraints(
         minHeight: size.height,
-      ),
+      ), 
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: NetworkImage(SkillsData.bg_image), fit: BoxFit.cover, 
-              colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.1), 
-              BlendMode.dstATop,
-              ),  
-          ),
+        image: DecorationImage(
+          image: NetworkImage(SkillsData.bg_image), 
+          fit: BoxFit.cover, 
         ),
+      ),
       child: DefaultTextStyle(
         style: TextStyle(color: SkillsData.fontColor),
         child: Container(
@@ -43,25 +41,27 @@ class _SkillScreenState extends State<SkillScreen> {
           // padding: EdgeInsets.all(15),
           // color: Colors.green,
           alignment: Alignment.topCenter,
-          child: ResponsiveGridRow(
+                    child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // List of Skills
-              ResponsiveGridCol(
-                sm: 12,
-                lg: 1,
-                child: SkillsListView(
-                  setSkill: _setSkill,
-                  selectedSkill: selectedSkill,
-                ),
+              Column(
+                // sm: 12,
+                // lg: 1,
+                children: [
+                  SkillsListView(
+                    setSkill: _setSkill,
+                    selectedSkill: selectedSkill,
+                  ),
+                ]
               ),
-              // Details of skills
-              ResponsiveGridCol(
-                sm: 12,
-                lg: 9,
-                child: SkillDetailView(
-                  selectedSkill: selectedSkill,
-                ),
+              Column(
+                // sm: 12,
+                // lg: 9,
+                children: [
+                  SkillDetailView(
+                    selectedSkill: selectedSkill,
+                  ),
+                ]
               ),
             ],
           ),
@@ -110,15 +110,17 @@ class SkillDetailView extends StatelessWidget {
                           )),
                     ],
                   ),
-                  ResponsiveGridRow(
+                  Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ...selectedSkill.projects.map(
-                          (proj) => ResponsiveGridCol(
-                            lg: 6,
-                            md: 12,
-                            child: InkWell(
+                          (proj) => Column(
+                            // lg: 6,
+                            // md: 12,
+                            children: [
+                              InkWell(
                               child: Container(
+                                width: 750,
                                 margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                 decoration: BoxDecoration(
                                   color: Colors.green,
@@ -129,6 +131,11 @@ class SkillDetailView extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Gravatar(imageUrl: proj.image!),
+                                    Container(
+                                      color: Colors.black,
+                                      width: 2,
+                                      height: 120,
+                                    ),
                                     Expanded(
                                       child: Container(
                                         padding: EdgeInsets.only(left: 10),
@@ -142,6 +149,11 @@ class SkillDetailView extends StatelessWidget {
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.bold),
                                               softWrap: true,
+                                            ),
+                                            Container(
+                                              height: 2,
+                                              width: 600,
+                                              color: Colors.black
                                             ),
                                             SizedBox(
                                               height: 5,
@@ -175,6 +187,7 @@ class SkillDetailView extends StatelessWidget {
                                 _launchURL(proj.sourceUrl!);
                               },
                             ),
+                            ]
                           ),
                         ),
                       ]),
@@ -220,7 +233,7 @@ class SkillsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
+      width: 120,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

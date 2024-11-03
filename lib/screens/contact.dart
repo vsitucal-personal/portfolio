@@ -20,8 +20,9 @@ class _ContactScreenState extends State<ContactScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Container(
+      color: Color.fromARGB(230, 255, 255, 255),
       padding: EdgeInsets.fromLTRB(0, 0, 60, 0),
       // constraints: BoxConstraints(
       //   minHeight: size.height,
@@ -29,10 +30,6 @@ class _ContactScreenState extends State<ContactScreen> {
       decoration: BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(ContactData.bg_image), fit: BoxFit.cover, 
-              colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.1), 
-              BlendMode.dstATop,
-              ),  
           ),
         ),
       child: DefaultTextStyle(
@@ -43,25 +40,27 @@ class _ContactScreenState extends State<ContactScreen> {
           // padding: EdgeInsets.all(15),
           // color: Colors.white70,
           alignment: Alignment.topCenter,
-          child: ResponsiveGridRow(
+                    child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // List of Skills
-              ResponsiveGridCol(
-                sm: 12,
-                lg: 1,
-                child: ContactListView(
-                  setContact: _setContact,
-                  selected: selected,
-                ),
+              Column(
+                // sm: 12,
+                // lg: 1,
+                children: [
+                  ContactListView(
+                    setContact: _setContact,
+                    selected: selected,
+                  ),
+                ]
               ),
-              // Details of skills
-              ResponsiveGridCol(
-                sm: 12,
-                lg: 9,
-                child: StatelesContactScreen(
-                  selected: selected,
-                ),
+              Column(
+                // sm: 12,
+                // lg: 9,
+                children: [
+                  StatelesContactScreen(
+                    selected: selected,
+                  ),
+                ]
               ),
             ],
           ),
@@ -80,7 +79,7 @@ class ContactListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
+      width: 120,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,6 +140,7 @@ class StatelesContactScreen extends StatelessWidget {
         //color: Colors.white24,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (this.selected == "Contact") ...[
               Align(
@@ -149,6 +149,7 @@ class StatelesContactScreen extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text(
                     "Contact",
+                    textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 28, 
                       // fontWeight: FontWeight.bold, 
@@ -157,53 +158,111 @@ class StatelesContactScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              ResponsiveGridRow(
-                shrinkChildren: true,
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Row(
+                // shrinkChildren: true,
+                // crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   ...ContactData.contacts.map((contact) => ResponsiveGridCol(
-                        xs: 6,
-                        sm: 4,
-                        md: 3,
-                        lg: 2,
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: RawMaterialButton(
-                            fillColor: contact.bgColor,
-                            hoverColor: contact.bgColor,
-                            elevation: 10,
-                            hoverElevation: 15,
-                            animationDuration: Duration(milliseconds: 200),
+                        // xs: 6,
+                        // sm: 4,
+                        // md: 3,
+                        // lg: 2,
+                        child: SizedBox(
+                          width: 250,
+                          height: 150,
+                          child: Padding(
                             padding: EdgeInsets.all(10),
-                            onPressed: () {
-                              _launchURL(contact.url);
-                            },
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: FaIcon(
-                                    contact.icon,
-                                    size: 50,
-                                    color: contact.iconColor,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    contact.contactName,
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        color: contact.textColor,
-                                        fontWeight: FontWeight.bold
+                            child: RawMaterialButton(
+                              fillColor: contact.bgColor,
+                              hoverColor: contact.bgColor,
+                              elevation: 10,
+                              hoverElevation: 15,
+                              animationDuration: Duration(milliseconds: 200),
+                              padding: EdgeInsets.all(10),
+                              onPressed: () {
+                                _launchURL(contact.url);
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: FaIcon(
+                                      contact.icon,
+                                      size: 50,
+                                      color: contact.iconColor,
                                     ),
                                   ),
-                                )
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      contact.contactName,
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color: contact.textColor,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                        ),
+                        )
+                      )),
+                ],
+              ),
+              Row(
+                // shrinkChildren: true,
+                // crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ...ContactData.contacts2.map((contact) => ResponsiveGridCol(
+                        // xs: 6,
+                        // sm: 4,
+                        // md: 3,
+                        // lg: 2,
+                        child: SizedBox(
+                          width: 250,
+                          height: 150,
+                          child: Padding(
+                            padding: EdgeInsets.all(10),
+                            child: RawMaterialButton(
+                              fillColor: contact.bgColor,
+                              hoverColor: contact.bgColor,
+                              elevation: 10,
+                              hoverElevation: 15,
+                              animationDuration: Duration(milliseconds: 200),
+                              padding: EdgeInsets.all(10),
+                              onPressed: () {
+                                _launchURL(contact.url);
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: FaIcon(
+                                      contact.icon,
+                                      size: 50,
+                                      color: contact.iconColor,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      contact.contactName,
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: contact.textColor,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
                       )),
                 ],
               ),

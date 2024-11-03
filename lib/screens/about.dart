@@ -3,6 +3,7 @@ import 'package:portfolio/components/responsive_grid.dart';
 import 'package:portfolio/data/primary.dart';
 import 'package:portfolio/data/types.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:cached_network_image/cached_network_image.dart';
 
 class Gravatar extends StatelessWidget {
@@ -12,7 +13,7 @@ class Gravatar extends StatelessWidget {
 
   const Gravatar({
     Key? key, required this.imageUrl, 
-    this.height = 120, this.width = 180
+    this.height = 100, this.width = 100
   }) : super(key: key);
 
   @override
@@ -49,8 +50,9 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Container(
+      color: Color.fromARGB(230, 255, 255, 255),
       padding: EdgeInsets.fromLTRB(0, 0, 60, 0),
       // constraints: BoxConstraints(
       //   minHeight: size.height,
@@ -58,10 +60,6 @@ class _AboutScreenState extends State<AboutScreen> {
       decoration: BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(AboutData.bg_image), fit: BoxFit.cover, 
-              colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.1), 
-              BlendMode.dstATop,
-              ),  
           ),
         ),
       child: DefaultTextStyle(
@@ -72,23 +70,27 @@ class _AboutScreenState extends State<AboutScreen> {
           // padding: EdgeInsets.all(15),
           // color: Colors.white70,
           alignment: Alignment.topCenter,
-          child: ResponsiveGridRow(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ResponsiveGridCol(
-                sm: 12,
-                lg: 1,
-                child: AboutListView(
-                  setAbout: _setAbout,
-                  selected: selected,
-                ),
+              Column(
+                // sm: 12,
+                // lg: 1,
+                children: [
+                  AboutListView(
+                    setAbout: _setAbout,
+                    selected: selected,
+                  ),
+                ]
               ),
-              ResponsiveGridCol(
-                sm: 12,
-                lg: 9,
-                child: StatelessAboutScreen(
-                  selected: selected,
-                ),
+              Column(
+                // sm: 12,
+                // lg: 9,
+                children: [
+                  StatelessAboutScreen(
+                    selected: selected,
+                  ),
+                ]
               ),
             ],
           ),
@@ -107,7 +109,7 @@ class AboutListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
+      width: 120,
       child: ResponsiveGridRow(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,11 +209,120 @@ class StatelessAboutScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+              ],
+              if (this.selected == "Certifications") ...[
+                HeaderRow(
+                  icon: FontAwesomeIcons.certificate,
+                  heading: "Certifications",
+                ),
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Column(
+                    children: [
+                      ...AboutData.certs.map((cert) => 
+                              Column(
+                                children: [
+                                  CertTile(data: cert,),
+                                ]
+                              ),
+                            ),
+                    ],
+                  ),
+                ),
               ]
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class CertTile extends StatelessWidget {
+  const CertTile({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
+
+  void _launchURL(String _url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : print('Cant launch this url');
+
+  final CertData data;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        _launchURL(data.url); // Replace with your function or action
+      },
+      child: Container(
+        width: 750,
+        // height: 300,
+        margin: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        padding: EdgeInsets.all(10),
+        // padding: EdgeInsets.fromLTRB(0, 0, 75, 0),
+        decoration: BoxDecoration(
+            color: data.color,
+            borderRadius: BorderRadius.circular(10)
+        ),
+        child: IntrinsicHeight(
+          child: Row(
+          children: [
+            Gravatar(imageUrl: data.image!),
+            Container(
+                color: data.fontColor,
+                width: 2,
+            ),
+            SizedBox(
+                width: 2,
+            ),
+            Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:8.0),
+                child: Text(
+                  data.certName,
+                  style: TextStyle(
+                      color: data.altcolor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      ),
+                      softWrap: true,
+                ),
+              ),
+              Container(
+                height: 2,
+                width: 600,
+                color: data.altcolor,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  data.info,
+                  style: TextStyle(
+                      color: data.fontColor,
+                      // fontWeight: FontWeight.bold,
+                      fontSize: 14),
+                      softWrap: true,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  data.when,
+                  style: TextStyle(
+                      color: data.fontColor,
+                      // fontWeight: FontWeight.bold,
+                      fontSize: 12),
+                      softWrap: true,
+                ),
+              ),
+            ],
+          ),
+          ]
+        ))
+      )
     );
   }
 }
@@ -234,22 +345,22 @@ class EducationTile extends StatelessWidget {
         _launchURL(data.url); // Replace with your function or action
       },
       child: Container(
-        width: 850,
+        width: 750,
         // height: 300,
         margin: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-        // padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
         // padding: EdgeInsets.fromLTRB(0, 0, 75, 0),
         decoration: BoxDecoration(
             color: data.color,
             borderRadius: BorderRadius.circular(10)
         ),
-        child: Row(
+        child: IntrinsicHeight(
+          child: Row(
           children: [
             Gravatar(imageUrl: data.image!),
             Container(
                 color: data.fontColor,
                 width: 2,
-                height: 120,
             ),
             SizedBox(
                 width: 2,
@@ -262,12 +373,17 @@ class EducationTile extends StatelessWidget {
                 child: Text(
                   data.degree,
                   style: TextStyle(
-                      color: data.fontColor,
+                      color: data.altcolor,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       ),
                       softWrap: true,
                 ),
+              ),
+              Container(
+                height: 2,
+                width: 600,
+                color: data.altcolor,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -294,7 +410,7 @@ class EducationTile extends StatelessWidget {
             ],
           ),
           ]
-        )
+        ))
       )
     );
   }

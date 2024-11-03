@@ -93,8 +93,9 @@ market venue the executions are traded on, and whether the client is a market ta
       degree: "Master of Science in Data Science (MSDS)",
       college: "Asian Institute of Management\nMakati",
       timeSpan: "2023 - 2025",
-      color: Color.fromARGB(255, 5, 17, 83),
-      fontColor: Colors.white,
+      color: Colors.white,
+      fontColor: Color.fromARGB(255, 5, 17, 83),
+      altcolor: Color(0xFF00695C)
     ),
     const EducationData(
       url: "https://cas.upm.edu.ph/undergraduate-degree-programs-2/",
@@ -102,14 +103,29 @@ market venue the executions are traded on, and whether the client is a market ta
       degree: "Bachelor of Science in Applied Physics (Health Physics Concentration)",
       college: """University of the Philippines Manila\n""",
       timeSpan: "2013 - 2019",
-      color: Color.fromARGB(255, 5, 17, 83),
-      fontColor: Colors.white,
+      color: Colors.white,
+      fontColor: Color.fromARGB(255, 5, 17, 83),
+      altcolor: Color(0xFF00695C)
+    ),
+  ];
+
+  static const List<CertData> certs = [
+    const CertData(
+      url: "https://www.credly.com/badges/7a1315d4-ba20-4a29-b6a0-6361a214818b/linked_in_profile",
+      image: "assets/images/oca.png",
+      certName: "Oracle Certified Associate, Java SE 8 Programmer",
+      info: "November 19, 2019",
+      when: "",
+      color: Colors.white,
+      fontColor: Color.fromARGB(255, 5, 17, 83),
+      altcolor: Color(0xFF00695C)
     ),
   ];
 
   static const selectedAbout = [
     "Experience",
-    "Education"
+    "Education",
+    "Certifications"
   ];
   static const color = Colors.pink;
   static const secondaryButtonColor = Colors.blueGrey;
@@ -158,7 +174,7 @@ class SkillsData {
             sourceUrl: "https://github.com/vsitucal-personal/DMW2_Final",
           ),
           const ProjectsData(
-            project: "Feature Analysis on the London Fire Brigade through Clustering\n",
+            project: "Feature Analysis on the London Fire Brigade through Clustering",
             duration: "(AIM-MSDS) Data Mining and Wrangling 2 - Laboratory Project on Clustering Methods",
             aboutProject:
                 """Used Representative Based, Agglomerative and Density Based clustering to assess and highlight inefficiencies in the handling of fire events by the London Fire Brigade""",
@@ -288,6 +304,17 @@ class ContactData {
       textColor: Colors.white,
       bgColor: Colors.black,
     ),
+  ];
+
+  static const List<ContactClass> contacts2 = [
+    const ContactClass(
+      contactName: "Jupyter (On-Demand)",
+      icon: FontAwesomeIcons.book,
+      url: "http://lab.vitucal.com:8888/lab",
+      iconColor: Colors.white,
+      bgColor: Colors.orange,
+      textColor: Colors.white,
+    )
   ];
 
   static const selectedContact = [

@@ -17,18 +17,41 @@
   });
 }
 
+class CertData{
+  final String certName;
+  final String info;
+  final String when;
+  final String? image;
+  final String url;
+  final Color color;
+  final Color fontColor;
+  final Color altcolor;
+
+  const CertData({
+    required this.certName, required this.info, required this.when, required this.url,
+    this.color = Colors.white70,
+    this.fontColor = Colors.black,
+    this.altcolor = Colors.white,
+    this.image = 'https://image.flaticon.com/icons/png/128/3688/3688571.png'
+  });
+}
+
  class EducationData{
   final String degree;
   final String college;
   final String timeSpan;
   final Color color; //date span as string ,e.g- July 2019 - Aug 2021
   final Color fontColor;
+  final Color altcolor;
   final String? image;
   final String url;
 
   const EducationData({
-    required this.degree, required this.college, required this.timeSpan, required this.url,this.color = Colors.white70, 
-    this.fontColor = Colors.black, this.image = 'https://image.flaticon.com/icons/png/128/3688/3688571.png'
+    required this.degree, required this.college, required this.timeSpan, required this.url,
+    this.color = Colors.white70, 
+    this.fontColor = Colors.black, 
+    this.altcolor = Colors.white,
+    this.image = 'https://image.flaticon.com/icons/png/128/3688/3688571.png'
   });
 }
 
