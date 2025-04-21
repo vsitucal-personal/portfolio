@@ -16,20 +16,18 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable'
-    - run: flutter pub get
     - run: |
-        ls
+        flutter pub get
         flutter build -v web --release
-        ls build/web
 
-    # - name: Configure AWS credentials
-    #   uses: aws-actions/configure-aws-credentials@v2
-    #   with:
-    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: ap-southeast-1  # change to your region
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-southeast-1
 
     - name: AWS steps
       run: | 
-        aws s3 sync build/web/ s3://vitucal.com/ --acl public-read
-        aws cloudfront create-invalidation --distribution-id E1O4HZJ8Z35DWJ --paths "/*"
+        aws s3 sync build/web/ ${{ secrets.S3_TARGET }} --acl public-read
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.DIST_ID }} --paths "/*"
