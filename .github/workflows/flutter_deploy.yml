@@ -19,7 +19,10 @@ jobs:
         # flutter-version: '2.0.5'
     - run: flutter pub get
     # - run: flutter test
-    - run: flutter build -v web --release
+    - run: |
+        ls
+        flutter build -v web --release
+        ls build/web
 
     # - name: Configure AWS credentials
     #   uses: aws-actions/configure-aws-credentials@v2
