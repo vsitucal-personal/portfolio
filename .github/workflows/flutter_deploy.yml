@@ -13,18 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Flutter
-      uses: subosito/flutter-action@v2
+    - uses: subosito/flutter-action@v1
       with:
-        channel: 'master'
-
-    - name: Install dependencies
-      run: |
-        flutter clean
-        flutter pub get
-
-    - name: Build Flutter Web
-      run: flutter build web
+        channel: 'stable'
+        # flutter-version: '2.0.5'
+    - run: flutter pub get
+    # - run: flutter test
+    - run: flutter build -v web --release
 
     # - name: Configure AWS credentials
     #   uses: aws-actions/configure-aws-credentials@v2
