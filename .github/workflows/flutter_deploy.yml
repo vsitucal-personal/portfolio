@@ -3,8 +3,8 @@ name: Build and Deploy Flutter Web to S3
 on:
   push:
     branches:
-      - main  # or your deploy branch
-
+      - master
+      
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
