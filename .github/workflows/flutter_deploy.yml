@@ -19,6 +19,7 @@ jobs:
     - run: |
         flutter pub get
         flutter build -v web --release
+        echo ${{ secrets.S3_TARGET }}
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
