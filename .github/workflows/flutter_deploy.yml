@@ -16,9 +16,7 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable'
-        # flutter-version: '2.0.5'
     - run: flutter pub get
-    # - run: flutter test
     - run: |
         ls
         flutter build -v web --release
@@ -29,8 +27,9 @@ jobs:
     #   with:
     #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
     #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: us-east-1  # change to your region
+    #     aws-region: ap-southeast-1  # change to your region
 
-    # - name: Sync to S3
-    #   run: aws s3 sync build/web s3://your-bucket-name --delete
-
+    - name: AWS steps
+      run: | 
+        aws s3 sync build/web/ s3://vitucal.com/ --acl public-read
+        aws cloudfront create-invalidation --distribution-id E1O4HZJ8Z35DWJ --paths "/*"
