@@ -25,7 +25,7 @@ class AboutData {
       image: "assets/images/pdax.png",
       organisation: "Philippine Digital Asset Exchange (PDAX)",
       jobTitle: "Software Engineer",
-      timeSpan: "Aug 2024 - Present",
+      timeSpan: "Aug 2024 - Jan 2025",
       info: """Crypto as a Service (CaaS)
 \u2022 Led a data warehousing project that leveraged big data technologies to cut report generation time from hours to minutes, enabling seamless integration with Data Science, AI, and Analytics. Recently integrated the data warehouse with Metabase, a business intelligence tool to create dashboards supporting different business units\n""",
       color: Color.fromARGB(255, 5, 17, 83),
@@ -149,6 +149,38 @@ class SkillsData {
             """x""",
         certifications: [],
         projects: [
+           const ProjectsData(
+            project: "Samn's Mercado: End to End E-Commerce Platform",
+            duration: "(AIM-MSDS) Data Engineering - Final Project",
+            aboutProject:
+                """An e-commerce use case showcasing key data engineering concepts like OLAP, OLTP, NoSQL, and Data Lakes through a fully integrated end-to-end platform""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/msds_deds_final_project",
+          ),
+           const ProjectsData(
+            project: "MLOps End to End Final Project",
+            duration: "(AIM-MSDS) Machine Learning Operations - Final Project (Sit In)",
+            aboutProject:
+                """A containerized ML workflow using Dagster, MLflow, and FastAPI for data, tracking, and real-time predictions. GitHub Actions showcases a CI/CD demo with linting, formatting, and testing for code quality""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/mlops_final_project",
+          ),
+          const ProjectsData(
+            project: "Clashifier: Predicting Triumphs and Tumbles in Clash Royale",
+            duration: "(AIM-MSDS) Big Data And Cloud Computing - Final Project",
+            aboutProject:
+                """Using big data and cloud computing, this study predicts match outcomes with high accuracy using SparkML""",
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/bdcc_final",
+          ),
+          const ProjectsData(
+            project: "MAPPING INFLUENCE: Examining PSEI's Top Shareholders",
+            duration: "(AIM-MSDS) Network Science - Final Project",
+            aboutProject:
+              """Using network science, we uncover offshore dominance and local fragmentation in PSEI shareholder dynamics""",    
+            image: "assets/images/others/github.png",
+            sourceUrl: "https://github.com/vsitucal-personal/ns_tech_report",
+          ),
           const ProjectsData(
             project: "Which mainstream cryptocurrency is best for your needs?",
             duration: "(AIM-MSDS) Big Data And Cloud Computing - Laboratory Report",
@@ -233,7 +265,7 @@ class SkillsData {
             sourceUrl: "https://medium.com/@vsitucal/introduction-to-geopandas-using-ph-gadm-and-osm-shape-files-dc5529a8f102?source=friends_link&sk=b7e1884b919bb2b05e31dc9ba6f809c1",
           ),
           const ProjectsData(
-            project: "“Data Strategy in Modern Business: A Personal Weltanschauung”",
+            project: "Data Strategy in Modern Business: A Personal Weltanschauung",
             duration: "",
             aboutProject:
                 """Data Science and AI Ethics blog""",
@@ -244,20 +276,20 @@ class SkillsData {
   ];
 }
 
-class AdvertData {
-  static const bg_image = "assets/images/tiger.jfif";
-  static const gcash = "assets/images/gcash.png";
-  static const List<ContactClass> contacts = [
-    const ContactClass(
-      contactName: "Send some donation my way and advertise your brands here!",
-      icon: FontAwesomeIcons.bullhorn,
-      url: "mailto:vsitucal@gmail.com",
-      iconColor: Colors.white,
-      bgColor: Colors.black,
-      textColor: Colors.white,
-    ),
-  ];
-} 
+// class AdvertData {
+//   static const bg_image = "assets/images/tiger.jfif";
+//   static const gcash = "assets/images/gcash.png";
+//   static const List<ContactClass> contacts = [
+//     const ContactClass(
+//       contactName: "Send some donation my way and advertise your brands here!",
+//       icon: FontAwesomeIcons.bullhorn,
+//       url: "mailto:vsitucal@gmail.com",
+//       iconColor: Colors.white,
+//       bgColor: Colors.black,
+//       textColor: Colors.white,
+//     ),
+//   ];
+// } 
 
 
 class ContactData {
@@ -306,20 +338,20 @@ class ContactData {
     ),
   ];
 
-  static const List<ContactClass> contacts2 = [
-    const ContactClass(
-      contactName: "Jupyter (On-Demand)",
-      icon: FontAwesomeIcons.book,
-      url: "http://lab.vitucal.com:8888/lab",
-      iconColor: Colors.white,
-      bgColor: Colors.orange,
-      textColor: Colors.white,
-    )
-  ];
+  // static const List<ContactClass> contacts2 = [
+  //   const ContactClass(
+  //     contactName: "Jupyter (On-Demand)",
+  //     icon: FontAwesomeIcons.book,
+  //     url: "http://lab.vitucal.com:8888/lab",
+  //     iconColor: Colors.white,
+  //     bgColor: Colors.orange,
+  //     textColor: Colors.white,
+  //   )
+  // ];
 
   static const selectedContact = [
     "Contact",
-    "Donate"
+    // "Donate"
   ];
   static const color = Colors.pink;
   static const secondaryButtonColor = Colors.blueGrey;

@@ -47,10 +47,10 @@ var screensData = [
     widget: ContactScreen(),
     primaryColor: Colors.black,
   ),
-  ScreenData(
-    icon: FontAwesomeIcons.bullhorn,
-    tooltip: "Advertise",
-    widget: AdvertScreen(),
-    primaryColor: Colors.black,
-  ),
+  // ScreenData(
+  //   icon: FontAwesomeIcons.bullhorn,
+  //   tooltip: "Advertise",
+  //   widget: AdvertScreen(),
+  //   primaryColor: Colors.black,
+  // ),
 ];

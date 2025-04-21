@@ -212,90 +212,90 @@ class StatelesContactScreen extends StatelessWidget {
                       )),
                 ],
               ),
-              Row(
-                // shrinkChildren: true,
-                // crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  ...ContactData.contacts2.map((contact) => ResponsiveGridCol(
-                        // xs: 6,
-                        // sm: 4,
-                        // md: 3,
-                        // lg: 2,
-                        child: SizedBox(
-                          width: 250,
-                          height: 150,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: RawMaterialButton(
-                              fillColor: contact.bgColor,
-                              hoverColor: contact.bgColor,
-                              elevation: 10,
-                              hoverElevation: 15,
-                              animationDuration: Duration(milliseconds: 200),
-                              padding: EdgeInsets.all(10),
-                              onPressed: () {
-                                _launchURL(contact.url);
-                              },
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: FaIcon(
-                                      contact.icon,
-                                      size: 50,
-                                      color: contact.iconColor,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      contact.contactName,
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: contact.textColor,
-                                          fontWeight: FontWeight.bold
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      )),
-                ],
-              ),
+              // Row(
+              //   // shrinkChildren: true,
+              //   // crossAxisAlignment: CrossAxisAlignment.end,
+              //   children: [
+              //     ...ContactData.contacts2.map((contact) => ResponsiveGridCol(
+              //           // xs: 6,
+              //           // sm: 4,
+              //           // md: 3,
+              //           // lg: 2,
+              //           child: SizedBox(
+              //             width: 250,
+              //             height: 150,
+              //             child: Padding(
+              //               padding: EdgeInsets.all(10),
+              //               child: RawMaterialButton(
+              //                 fillColor: contact.bgColor,
+              //                 hoverColor: contact.bgColor,
+              //                 elevation: 10,
+              //                 hoverElevation: 15,
+              //                 animationDuration: Duration(milliseconds: 200),
+              //                 padding: EdgeInsets.all(10),
+              //                 onPressed: () {
+              //                   _launchURL(contact.url);
+              //                 },
+              //                 child: Column(
+              //                   mainAxisAlignment: MainAxisAlignment.center,
+              //                   children: [
+              //                     Padding(
+              //                       padding: const EdgeInsets.all(8.0),
+              //                       child: FaIcon(
+              //                         contact.icon,
+              //                         size: 50,
+              //                         color: contact.iconColor,
+              //                       ),
+              //                     ),
+              //                     Padding(
+              //                       padding: const EdgeInsets.all(8.0),
+              //                       child: Text(
+              //                         contact.contactName,
+              //                         style: TextStyle(
+              //                             fontSize: 12,
+              //                             color: contact.textColor,
+              //                             fontWeight: FontWeight.bold
+              //                         ),
+              //                       ),
+              //                     )
+              //                   ],
+              //                 ),
+              //               ),
+              //             ),
+              //           )
+              //         )),
+              //   ],
+              // ),
             ],
-            if (this.selected == "Donate") ...[
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: Text(
-                    "Donate (G-Cash)",
-                    style: TextStyle(
-                      fontSize: 28, 
-                      // fontWeight: FontWeight.bold, 
-                      color: Colors.black)
-                    ,
-                  ),
-                ),
-              ),
-              Container(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  // margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  width: 330, // Set the width of the container
-                  height: 330,
-                  child: Image.network(ContactData.gcash, fit: BoxFit.fitHeight),
-                ),
-              ),
-            ]
+            // if (this.selected == "Donate") ...[
+            //   Align(
+            //     alignment: Alignment.topLeft,
+            //     child: Container(
+            //       margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+            //       child: Text(
+            //         "Donate (G-Cash)",
+            //         style: TextStyle(
+            //           fontSize: 28, 
+            //           // fontWeight: FontWeight.bold, 
+            //           color: Colors.black)
+            //         ,
+            //       ),
+            //     ),
+            //   ),
+            //   Container(
+            //     height: 10,
+            //   ),
+            //   Align(
+            //     alignment: Alignment.topLeft,
+            //     child: Container(
+            //       // margin: EdgeInsets.all(10),
+            //       padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+            //       width: 330, // Set the width of the container
+            //       height: 330,
+            //       child: Image.network(ContactData.gcash, fit: BoxFit.fitHeight),
+            //     ),
+            //   ),
+            // ]
           ],
         ),
       ),
