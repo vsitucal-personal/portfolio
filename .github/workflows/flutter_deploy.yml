@@ -19,10 +19,12 @@ jobs:
         channel: 'master'
 
     - name: Install dependencies
-      run: flutter pub get
+      run: |
+        flutter clean
+        flutter pub get
 
     - name: Build Flutter Web
-      run: flutter build web --release
+      run: flutter build web
 
     # - name: Configure AWS credentials
     #   uses: aws-actions/configure-aws-credentials@v2
