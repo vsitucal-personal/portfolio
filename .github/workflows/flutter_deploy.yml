@@ -16,6 +16,8 @@ jobs:
       with:
         channel: 'stable'
     - run: |
+        rm pubspec.lock
+        flutter clean
         flutter pub get
         flutter build -v web --release
         echo ${{ secrets.S3_TARGET }}
