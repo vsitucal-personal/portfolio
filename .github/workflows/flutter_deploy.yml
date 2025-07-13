@@ -32,4 +32,7 @@ jobs:
     - name: AWS steps
       run: | 
         aws s3 sync build/web/ ${{ secrets.S3_TARGET }} --acl public-read
+        aws s3api put-object-acl \
+          --bucket ${{ secrets.S3_TARGET }} \
+          --key Latest_Vitucal_Resume.pdf --acl public-read
         aws cloudfront create-invalidation --distribution-id ${{ secrets.DIST_ID }} --paths "/*"
